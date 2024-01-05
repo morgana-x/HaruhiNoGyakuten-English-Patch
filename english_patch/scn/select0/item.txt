@@ -1,0 +1,3 @@
+@item no="0" name="The missing maid outfit" comment="A stolen maid outfit.[br]And Kyon has been framed![br]Lawyer Harui Suzumiya's debut!!" image="item_maid" type=chara
+@item no="1" name="盗撮事件" comment="気絶させられた朝比奈みくる。果たして部室で何をされたのか。彼女の記憶を取り戻せるか――" image="item_mikuru" type=chara
+@item no="2" name="Crisis of the SOS Brigade" comment="仕組まれた偶然。ＳＯＳ団存続の危機を涼宮ハルヒは乗り越えられるのか!?" image="item_wansho" type=chara

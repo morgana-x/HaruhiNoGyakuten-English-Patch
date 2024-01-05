@@ -1,0 +1,13 @@
+@item no="0" name="Super Sensei" comment="The title of Suzumiya Haruhi[br]during this trial.[br]Even a criminal would be acquitted." image="item_wansho"
+@item no="1" name="Clubroom's lock" comment="There was never a time[br]when the club room was locked.[br]Maybe the key is broken." image="item_file"
+@item no="2" name="Maid Costume" comment="The sacred costume of the SOS[br]club. No matter where you look,[br]it's a maid outfit. Quite noticeable." image="item_maid"
+@item no="3" name="SOS Brigade's Alibi" comment="Order of enterance:[br]Kyon → Mikuru → Haruhi →[br]Koizumi → Nagato." image="item_file"
+@item no="4" name="Nagato's Alibai" comment="I was late arriving[br]at the SOS clubroom[br]as I was in the computer lab." image="item_file"
+@item no="5" name="Kyon's Gym Bag?" comment="Something that Kyon used[br]as a gym bag that[br]contained maid uniform shoes." image="item_nekoesa"
+
+@item no="10" name="Suzumiya Haruhi" comment="泣く子も黙るSOS団団長。今回は超先生だ。" image="item_haruhi" type=chara
+@item no="11" name="Kyon" comment="SOS団突っ込み係兼雑用係。目下のところメイド服を盗んだと目されている。" image="item_kyon" type=chara
+@item no="12" name="Asahina Mikuru" comment="SOS団マスコットキャラ。どじっこメイドになるよう望まれていたが、メイド服が盗まれてしまった。" image="item_mikuru" type=chara
+@item no="13" name="Yuki Nagato" comment="無口キャラで宇宙人。何事もこなす万能選手。メガネっ娘はやめた。" image="item_nagato" type=chara
+@item no="14" name="Kazuki Koizumi" comment="SOS団副団長。わざとらしい笑みともったいぶった言い回しが特徴。" image="item_koizumi" type=chara
+@item no="15" name="Computer Lab Director" comment="文芸部の隣だったのが運のつき。SOS団に絡まれ、何かと搾取される運命。" image="item_comp" type=chara

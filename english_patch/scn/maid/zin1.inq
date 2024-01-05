@@ -1,0 +1,27 @@
+@info title="What I witnessed on the day[br]of the incident" subscn="zin1sub" name="comp"
+
+@section no="0" enable
+ @img file="chara/comp_shomentachi"
+ @speech value="That day was a nice windy day."
+ @shake target="shake0"
+ @confront miss="miss"
+
+@section no="1" enable
+ @img file="chara/comp_shomentachi"
+ @speech value="I happened to be standing in[br]the hallway when he came[br]out holding a maid outfit.ÅB"
+ @shake target="shake1"
+ @confront miss="miss"
+ @end target="end1"
+
+@section no="2"
+ @img file="chara/comp_shomentachi"
+ @speech value="I happened to be standing in[br]the hallway when he came[br]out holding a maid outfit.ÅB"
+ @shake target="shake2"
+ @confront miss="miss"
+
+@section no="3"
+ @img file="chara/comp_shomentachi"
+ @speech value="It was just after school,[br]so there were quite a[br]few people in the hallway."
+ @shake target="shake3"
+ @confront item="2" success="confront3" miss="miss"
+ @end target="end2"

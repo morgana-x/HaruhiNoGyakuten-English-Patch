@@ -1,0 +1,3 @@
+@item no="0" name="The missing maid outfit" comment="A stolen maid outfit.[br]And Kyon has been framed![br]Lawyer Harui Suzumiya's debut!!" image="item_maid" type=chara
+@item no="1" name="“B–Œ" comment="‹Câ‚³‚¹‚ç‚ê‚½’©”ä“Ş‚İ‚­‚éB‰Ê‚½‚µ‚Ä•”º‚Å‰½‚ğ‚³‚ê‚½‚Ì‚©B”Ş—‚Ì‹L‰¯‚ğæ‚è–ß‚¹‚é‚©\\" image="item_mikuru" type=chara
+@item no="2" name="‚r‚n‚r’c‚ÌŠë‹@" comment="d‘g‚Ü‚ê‚½‹ô‘RB‚r‚n‚r’c‘¶‘±‚ÌŠë‹@‚ğ—Á‹{ƒnƒ‹ƒq‚Íæ‚è‰z‚¦‚ç‚ê‚é‚Ì‚©!?" image="item_wansho" type=chara

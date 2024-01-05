@@ -1,0 +1,39 @@
+@info title="Why was the Computer Club[br]Director the sole witness?" subscn="zin2sub" name="comp"
+
+@section no="0" enable
+ @img file="chara/comp_shomentachi"
+ @speech value="When he came out into the [br]hallway, he had a[br]gym uniform in his hand."
+ @shake target="shake0"
+ @confront miss="zin1sub:miss"
+
+@section no="1" enable
+ @img file="chara/comp_shomentachi"
+ @speech value="A glimpse of frilly clothes[br]could be seen in the[br]gym uniform."
+ @shake target="shake1"
+ @confront miss="zin1sub:miss"
+
+@section no="2" enable
+ @img file="chara/comp_shomentachi"
+ @speech value="That's why I thought he[br]came out with a maid outfit."
+ @shake target="shake2"
+ @confront miss="zin1sub:miss"
+ @end target="end2"
+
+@section no="3"
+ @img file="chara/comp_shomentachi"
+ @speech value="I saw Asahina in a maid outfit[br]once, and when I saw the frills,[br]I realized it was the maid outfit."
+ @shake target="shake3"
+ @confront miss="zin1sub:miss"
+
+@section no="4"
+ @img file="chara/comp_shomentachi"
+ @speech value="But to someone who had never[br]seen it before, it would have[br]looked like a gym uniform bag."
+ @shake target="shake4"
+ @confront item="5" success="confront4" miss="zin1sub:miss"
+
+@section no="5"
+ @img file="chara/comp_shomentachi"
+ @speech value="So I guess there[br]were no other witnesses."
+ @shake target="shake5"
+ @confront miss="zin1sub:miss"
+ @end target="end5"

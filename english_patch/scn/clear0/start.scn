@@ -1,0 +1,11 @@
+@itemGetNoshow 0
+@itemGetNoshow 1
+@itemGetNoshow 2
+@bgmPlay
+@backSet color="black" fade
+@backSet file="bg_clear" fade
+[np]
+@textShowMessage
+New scenario unlocked.[np]
+@itemGetShow 1 se=1
+@backSet color="black" fade

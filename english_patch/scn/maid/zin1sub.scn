@@ -1,0 +1,149 @@
+:shake0
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  The wind feels good?[np]
+  You are always absentminded[br]in the hallway on[br]sunny days?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Hmm, maybe[br]it's a coincidence。[np]
+  ...That doesn't really[br]matter, right?[np]
+@return
+
+:shake1
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  What is that?[br]that's all?[np]
+  Even if you say that's all[br]you witnessed...[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Uh that's annoying.[br]So how else can[br]I prove it?[np]
+  @courtSetLawyerBack
+  @textShowName haruhi
+  You didn't notice[br]anything else?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Other than that? Right?.[np]
+  Ah,[br]Come to think of it,[np]
+  There were quite a[br]few people in the hallway.[np]
+  It was just after school.[np]
+  Everyone was probably on[br]
+  their way to their clubs.[np]
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  A crowd in the hallway...[np]
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  Could you add that[br]detail to your testimony?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Ah Sure,[br]I don't mind.[np]
+  @inquiryDisableSpeech no="1"
+  @inquiryEnableSpeech no="2"
+  @inquiryEnableSpeech no="3"
+  @inquiryRewind
+@return
+
+:end1
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack noscr
+  @textShowName haruhi
+  Well, it's too short[br]and there's nothing[br]I can do about it.[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/kyon_shomenaseri" x=0 y=0
+  @textShowName kyon
+  ...[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @textShowName haruhi
+  Why, don't look so worried.[np]
+  If you leave it[br]to the super sensei,[br]everything will be fine.[np]
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  [cb]（Although、[br]I need to shake that[br]guy up to get more[br]information out of him.）[np]
+@return
+
+:shake2
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  It was really[br]Kyon that came[br]out right?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Yes,[br]It was definitely[br]him.[np]
+  @courtSetLawyerBack
+  @textShowName haruhi
+  There's no way of[br]mistaking it?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  No.[np]
+  I remember the scene[br]very vividly.[np]
+@return
+
+:shake3
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  There were many people?[np]
+  It was after school[br]and there were[br]lots of people?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  I guess so.[np]
+  Everyone was heading[br]to club activities,[br] right?[np]
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  [cb]（The hallway had lots of people...[br]That's weird given an aspect[br]of this case isn't it...）[np]
+@return
+
+:confront3
+  @inquiryExit
+@return
+
+:end2
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @courtSetLawyerBack noscr
+  @textShowName haruhi
+  It's kind of weird, isn't it?[br]I feel something strange.[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+  @textShowName kyon
+  Did you find anything? Haruhi.[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @textShowName haruhi
+  Hmmm.[br]Just a little more and [br]I think I'll have something[np]
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  I'll calm down,[br]and listen to the[br]testimony again.[np]
+@return
+
+:miss
+  @charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  @sePlay file="机を叩く"
+  This piece of evidence[br]
+  contradicts the testimony![br]
+  You can see it clearly![np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  ...What does that evidence[br]have to do with[br]what you just said?[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  Why doesn't it?[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  There is no[br]colleration.[np]
+  Suzumiya.[br]
+  Think more before[br]
+  Speaking again.[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @textShowName haruhi
+  [cb]（……It seems like[br]Mori's confidence in me[br]has worsened...）
+  @courtReduceLife
+  [np]
+@return

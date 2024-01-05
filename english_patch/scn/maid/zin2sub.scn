@@ -1,0 +1,232 @@
+:shake0
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  At that time,[br]what kind of impression[br]did Kyon leave on you?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Well,[np]
+  He was looking around[br]and acting suspicous.[np]
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  [cb]（Kyon![br]Why didn't you honestly[br]confess from the beginning?！）[np]
+  [cb]（I can almost see Kyon's goofy face!）[np]
+@return
+
+:shake1
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  You saw a glimpse?[np]
+  How much could you see?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Ah right,[br]If I'm not mistaken...[np]
+  The shoulder part?[br]The frilly portion is[br]awfully distinctive.[np]
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  [cb]（Kyon! If you're going[br]to steal, steal, but[br]at least don't be found out!）[np]
+  [cb]（I can see Kyon[br]grinning at the fact that[br]he was able to steal it!）[np]
+@return
+
+:shake2
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  You said you thought[br]
+  he came out with a[br]
+  maid costume.[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Well, as far as I knew,[br]it was obvious that there[br]was a maid uniform in your club room.[np]
+  I thought that frilly part[br]was the maid costume.[np]
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  [cb]（It's certainly not[br]a contradiciton.[br]I wonder what's wrong?）[np]
+  @textShowFull
+  [cb]（It's certainly not[br]a contradiciton.[br]I wonder what's wrong?）[c][br]
+  [br]
+\　[link target="more_shake"]Shake even more[/link][br]
+\　[link target="stop_shake"]Stop[/link][br]
+[np]
+@return
+
+:stop_shake
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  @textShowMessage
+  Yeah, that checks out.[np]
+  [cb]（……I wonder if it's[br]just my imagination.）[np]
+@return
+
+:more_shake
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @textShowName haruhi
+  @textShowMessage
+  Since you saw the frills...[br]
+  You thought it was[br]the maid outfit right?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Yeah, isn't it strange?[np]
+  @courtSetLawyerBack
+  @textShowName haruhi
+  Yeah...[np]
+  If anything,[np]wouldn't other people[br]think it's a maid outfit[br]just from the frills?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  Isn't that the point?[br]There's no other witnesses?[np]
+  @courtSetLawyerBack
+  @textShowName haruhi
+  Hmm... I wonder if you could[br]give your testimony again,[br]taking this into account.[np]
+  @inquiryDisableSpeech no="2"
+  @inquiryEnableSpeech no="3"
+  @inquiryEnableSpeech no="4"
+  @inquiryEnableSpeech no="5"
+  @inquiryRewind
+@return
+
+:end2
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @courtSetLawyerBack noscr
+  @textShowName haruhi
+  [cb]（It's certainly not[br]a contradiction.[br]I wonder what's wrong...）[np]
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  [cb]（I don't think so, but[br]I don't think Kyon[br]really did it.）[np]
+  [cb]（It's easy to see Kyon's[br]face with the bottom of[br]his nose stretched out, so...）[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/kyon_shomenaseri" x=0 y=0
+  @textShowName kyon
+  H,hey[br]
+  What's with those[br]suspicious eyes?[np]
+  I didn't really[br]steal it right?[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @textShowName haruhi
+  [cb](Well, what Kyon is[br]saying is also true.)[np]
+  [cb](I wonder what I would[br]do if I went out of[br]my way to steal it.)[np]
+  [cb]（あのちんまい妹ちゃんに着せるわけにもいかないし）[np]
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  [cb]（I think I'll try to[br]shake up the computer club[br]director a little more.）[np]
+@return
+
+:shake3
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  and?[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  huh?[np]
+  @courtSetLawyerBack
+  @textShowName haruhi
+  I'm asking how you thought[br]
+  about how Mikuru looked[br]
+  in the maid outfit.[np]
+  @courtShowIgi right
+  @charaShowRight file="chara/koizumi_igi" x=0 y=0
+  @courtSetProsecutorBack
+  @textShowName koizumi
+  That question has nothing[br]to do with this case.[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+  @textShowName mori
+  I accept the prosecutor's[br]objection.[np]
+  Please ask a more[br]related question。[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  [cb]（と、言われてもねぇ……）[np]
+@return
+
+:shake4
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  To others, it looked like[br]nothing more than a[br]gym bag with white cloth sticking out.[np]
+  @courtSetWitnessBack
+  @textShowName comp
+  You wouldn't normally think[br]that there would be a maid[br]outfit in your gym bag, right?[np]
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  Yeah, suppose so.[np]
+@return
+
+:confront4
+  @inquiryExit
+@return
+
+:shake5
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  Where's another witness?[np]
+  Koizumi.[br]
+  How much investigating[br] did you do?[np]
+  @charaShowRight file="chara/koizumi_tachi" x=0 y=0
+  @courtSetProsecutorBack
+  @textShowName koizumi
+  I've asked around[br]quite a bit.[np]
+  I don't think 100[br]people are worth it.[np]
+  @courtSetLawyerBack
+  @textShowName haruhi
+  I see,[br]Thankyou for[br]your hard work.[np]
+  From now on,[br]with my own hands,[br]Kyon's innocence will be proven.[np]
+  Searching for witnesses[br]is just a wasted effort.[np]
+  @charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+  @courtSetProsecutorBack
+  @textShowName koizumi
+  Hmpth.[np]
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  @courtSetLawyerBack
+  @textShowName haruhi
+  [cb]（I wonder what's wrong...）[np]
+@return
+
+:end5
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @courtSetLawyerBack noscr
+  @textShowName haruhi
+  Ha.[np]
+  It's pointless.[np]
+  Absoultely pointless.[np]
+  I don't see any contradictions.[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/kyon_shomenaseri" x=0 y=0
+  @textShowName kyon
+  No way...[np]
+  I didn't do it.[br]
+  Please, Haruhi.[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @textShowName haruhi
+  Well,[br]I guess Kyon[br]didn't do it.[np]
+  But unless I can[br]destroy the testimony,[br]there's nothing I can do.[np]
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  This is how the world[br]becomes filled with[br]false accusations.[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/kyon_shomengiwaku" x=0 y=0
+  @textShowName kyon
+  Hey,[br]don't be too pesimistic[br]and think about it more.[np]
+  @charaShowCenter file="chara/nagato_shomentachi" x=0 y=0
+  @textShowName nagato
+  Please take another look[br]at the court records.[np]
+  @charaShowCenter file="chara/kyon_shomenegao" x=0 y=0
+  @textShowName kyon
+  Nagato...![np]
+  @charaShowCenter file="chara/nagato_shomentachi" x=0 y=0
+  @textShowName nagato
+  A lie is a lie.[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+  @textShowName haruhi
+  ……。[np]
+  That's right Nagato.[br]That's not a good thing.[np]
+  I have to do my best[br]for this pathetic looking Kyon![np]
+  @charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+  [cb]（I'll take a close look at the court records!）[np]
+@return

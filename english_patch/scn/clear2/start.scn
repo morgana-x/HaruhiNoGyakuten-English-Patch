@@ -1,0 +1,8 @@
+@itemGetNoshow 0
+@itemGetNoshow 1
+@itemGetNoshow 2
+@bgmPlay
+@backSet color="black" fade
+@backSet file="bg_clear" fade
+[np]
+@backSet color="black" fade

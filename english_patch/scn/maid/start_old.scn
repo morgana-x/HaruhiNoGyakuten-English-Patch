@@ -1,0 +1,1559 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;システムセットアップ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@courtSetLife 5
+@courtSetNolifeScenario target="start:nolife"
+@textShowMessage
+
+@goto target="prologue_comp"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;デバッグ領域
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	@courtSetGuideBack
+  @itemGetNoshow 0
+  @itemGetNoshow 1
+  @itemGetNoshow 2
+  @itemGetNoshow 3
+  @itemGetNoshow 4
+  @itemGetNoshow 5
+  @itemGetNoshow 10
+  @itemGetNoshow 11
+  @itemGetNoshow 12
+  @itemGetNoshow 13
+  @itemGetNoshow 14
+  @itemGetNoshow 15
+@goto target="debug"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;共通ゲームオーバー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:nolife
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @bgmPlay file="kaitei"
+  @textShowName mori
+  @textShowMessage
+  本法廷は、これ以上の審議の必要性を認めません。[np]
+  さらに、被告に対する判決を決める時間も必要としません。[np]
+  これは、きわめて明白な事件です。[np]
+  疑問の余地はない！[np]
+  被告人に判決を言い渡します！[np]
+  @bgmPlay
+  @courtShowPlea guilty
+  被告はこれより身柄を司直に預けるものとし、１ヶ月以内に通常裁判を受ける事とします。[np]
+  では、本日はこれにて閉廷！[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/kyon_shomenaseri" x=0 y=0
+  @textShowName kyon
+  そ、そんな……。[np]
+  通常裁判ってどういうことだ、まじで裁判沙汰なのか。[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  おかしいわね、どこで間違えたのかしら……。[np]
+  うん！キョンが捕まっても差し入れにいってあげるわ。[np]
+  ＳＯＳ団の籍も残しておくから、早くオツトメ終えて帰ってくるのよ！[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/mikuru_shomentachi" x=0 y=0
+  @textShowName mikuru
+  はやく真人間になって帰ってきてくださいね……。[np]
+  @charaShowCenter file="chara/nagato_shomentachi" x=0 y=0
+  @textShowName nagato
+  時間を戻ってやりなおしをお勧めする。[np]
+  @charaHideAll
+  @textShowName kyon
+  ……。[np]
+  [cb]（なぜこんなことに……）[np]
+@exit rescode="gameover"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;プロローグ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:prologue_comp
+@backSet color="black"
+@bgmPlay file="prologue1"
+@textShowMessage
+
+はぁ……。[np]
+はぁ……。[np]
+はぁ……。[np]
+この朝比奈さんのメイド服さえあれば……。[np]
+はぁ……。[np]
+はぁ……。[np]
+はぁ……。[np]
+しかし……[w 1000][br]
+メイド服がなくなっているのはさすがに気づくよな……。[np]
+ここの団長は恐ろしいしな……。[np]
+@charaShowCenter file="chara/comp_shomentachi" wipe
+@textShowName comp
+…[w 500]…[w 500]…[w 500][np]
+@sePlay file="発見"
+そうだ！[br]
+あいつのせいにしてしまえば……！[np]
+@backSet color="black" fade
+@bgmPlay
+
+:prologue_kyon
+@textShowScene line1="某月某日　某時刻" line2="県立北高校部室棟　廊下"
+@textShowMessage
+@textShowName kyon
+[cb]（相変わらず猛暑の荒れ狂う夏。[br]
+俺は性懲りもなくＳＯＳ団部室を目指していた）[np]
+[cb]（あと数日で夏休みになるかと思うと、エアコンのない部室も許せる気がするから人間は不思議だ）[np]
+まぁ、[br]
+どう考えても暑いけどな……。[np]
+@backSet file=bg_rouka wipe
+@bgmPlay file="days"
+[cb]（朝比奈さんのメイド姿と手ずから入れてくれたお茶だけが今の俺の拠り所であることは間違いない）[np]
+[cb]（一つ上の先輩であるところの朝比奈さんは部室にいるときは大抵メイドの格好をしている）[np]
+[cb]（なぜなら我らが団長がそうおっしゃられたせいであり、朝比奈さんは律儀にそれを守り続けているのだ）[np]
+[cb]（このかわいらしい先輩は、相変わらず着替え中に部室に鍵をかけるということを覚えないため、[np]
+[cb]部室に入るとまれに生着替えシーンと遭遇してしまうというハプ{う　れ　し　い　事　件}ニングが起こる）[np]
+[cb]（期待している読者には悪いが、俺は紳士なのでノックをするぜ？）[np]
+@textShowName
+@sePlay file="扉を叩く"
+コン[w 500]コン[w 500][np]
+@textShowName kyon
+[cb]（…返事がない、ただの屍のようだ）[np]
+@textShowName
+@sePlay file="扉を叩く"
+コン[w 500]コン[w 500][np]
+@textShowName kyon
+[cb]（珍しいこともあるもんだ）[np]
+[cb]（朝比奈さんがいるときは中から返事が返ってくるし、いないときは長門がスッと扉を開けてくれる）[np]
+[cb]（ちなみに俺が来る時間に長門がいないことはほとんどないと断言してもいい）[np]
+[cb]（長門はいつ教室を出ているのかと思うくらい早くに来ているはずなのだが……）[np]
+……？[br]
+まだ誰もいないのか？[np]
+
+:prologue_hitori
+@sePlay file="ドア開閉"
+[w 500]
+@backSet file=bg_bushitu wipe
+@textShowScene line1="某月某日　某時刻" line2="文{ＳＯＳ団}芸部　部室"
+@textShowMessage
+@textShowName kyon
+[cb]（部室に入ってみると、なるほど確かに誰もいない）[np]
+[cb]（いつも思うがこの部室は鍵がかかっていたためしがない）[np]
+@itemGetShow 1
+[cb]（しかし、誰もいないと暇だな……）[np]
+[cb]（古泉に、より圧倒的な差をつけてやるためにも、久々に将棋の練習でもしてみるか……）[np]
+@backSet color="black" fade
+@textShowName
+パチン[w 500][br]
+パチン[np]
+@backSet file=bg_bushitu fade
+@textShowName kyon
+[cb]（いい加減、一人将棋も飽きてきたぞ……）[np]
+@textShowName
+@sePlay file="扉を叩く"
+コン[w 500]コン[w 500][np]
+@textShowName kyon
+[cb]（お、ようやく誰か来たようだ）[np]
+@sePlay file="ドア開閉"
+[w 500]
+@charaShowCenter file="chara/mikuru_shomenegao" wipe
+@textShowName mikuru
+キョンくん、今日ははやいね。[br]
+長門さんがいないのは珍しいかも。[np]
+ぱぱっと着替えてお茶いれますの[br]
+で、悪いんですけど……。[br]
+キョンくん……。[np]
+@textShowName kyon
+もちろん！[br]
+外で待たせていただきますよ。[br]
+着替え終わったら教えてください。[np]
+
+:prologue_haruhi
+@sePlay file="ドア開閉"
+[w 500]
+@backSet file=bg_rouka wipe
+@textShowMessage
+@charaShowCenter file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+あれっ？[br]
+部室から出てきてどうしたのよ。[np]
+@charaShowCenter file="chara/haruhi_shomenjitome"
+まさか団長の目の前で[br]
+逃走とかじゃないわよね、キョン？[np]
+@textShowName kyon
+[cb]（部室から出てみると、[br]
+部室に向かってきていたハルヒと出くわした）[np]
+いやな。[br]
+朝比奈さんが着替えるってんで、[br]
+外で待っているって訳さ。[np]
+@charaShowCenter file="chara/haruhi_shomentachi"
+@textShowName haruhi
+ふ～ん……。[np]
+@charaShowCenter file="chara/haruhi_shomenegao"
+どれどれ、[br]
+私が手伝ってあげようかしら。[np]
+@sePlay file="ドア開閉"
+[w 500]
+@charaHideCenter wipe
+@textShowName kyon
+[cb]（俺が止める間もなく、[br]
+ハルヒは手をわきわきさせながら[br]
+部室の中に消えた）[np]
+[cb]（せめて無事でいてください、朝比奈さん。[br]
+俺には祈ることしかできません）[np]
+@textShowName
+…[w 500]…[w 500]…[w 500][np]
+@textShowName kyon
+[cb]（しかし、いつもならハルヒの無茶な手伝いによる朝比奈さんの黄色い悲鳴が消えるのだが、[np]
+[cb]（今日はいつまで待っても中は静かなままだ）[np]
+@charaShowCenter file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+いや、[br]
+今日はまたずいぶんと静かですね。[np]
+@textShowName kyon
+[cb]（ハルヒが入っていったところを見ていたのか、不思議そうな声を出しながら古泉がやってきた。）[np]
+やはり古泉もそう思うか。[np]
+@textShowName koizumi
+これはもしかすると、あなたをびっくりさせるために新たな衣装を用意とかしているのかもしれませんね。[np]
+@textShowName kyon
+そうかぁ？[br]
+俺には今まで以上に驚く服ってのが何なのかも想像つかんぜ。[np]
+@charaHideAll
+@charaShowLeft file="chara/koizumi_shomentachi" x=-50
+@charaShowRight file="chara/mikuru_shomentachi" wipe
+@textShowName mikuru
+あのー。[np]
+@bgmPlay
+着替えないことになったので、[br]
+もう部室に入っても大丈夫です。[np]
+@textShowName kyon
+[cb]（……？[br]俺と古泉は顔を見合わせてから[br]
+部室に入った）[np]
+
+:prologue_hakkaku
+@backSet color="black" fade
+@backSet file=bg_bushitu wipe
+@bgmPlay file="suspence"
+@textShowScene line1="某月某日　某時刻" line2="文{ＳＯＳ団}芸部　部室"
+@charaShowCenter file="chara/haruhi_shomengiwaku" wipe
+@textShowMessage
+@textShowName kyon
+[cb]（ぷりぷりと怒り顔になったハルヒが部室の中を行ったり来たりしている）[np]
+なあ、ハルヒ。[br]
+何を怒っているんだ？[np]
+@textShowName haruhi
+これは事件よ！[br]
+そう！[br]
+大事件なのよ！[np]
+@textShowName kyon
+だから何が起こったんだよ？[np]
+@textShowName haruhi
+@charaShowCenter file="chara/haruhi_shomenjitome"
+あんた見てわかんないの！？[np]
+@charaShowCenter file="chara/haruhi_shomengiwaku"
+みくるちゃんのメイド服が[br]
+無くなっちゃったのよ！[np]
+@textShowName kyon
+@sePlay file="場面強調"
+な、なんだってー！[np]
+@itemShow 2
+[cb]（俺の心の拠り所。[br]
+プリティーエンジェルメイド朝比奈さんのメイド服が無くなった？）[np]
+@itemHide
+@itemGetShow 2
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+@charaShowRight file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+ふーむ。[br]
+確かに衣装かけには見当たりませんね。[np]
+これは一度、状況を整理したほうがいいかもしれません。[br]
+いかがですか、涼宮さん？[np]
+@charaShowLeft file="chara/haruhi_shomenjishin"
+@textShowName haruhi
+もちろんよ！[br]
+この私に無断で持っていくなんて[br]
+許されないことだわ！[np]
+草の根を分けてでも！[br]
+例え火の中水の中！[br]
+必ず見つけ出してやるんだから！[np]
+死刑よ、死刑！[br]
+見つけ出て死刑にするのよ！[np]
+@textShowName kyon
+[cb]（おいおい、誰だか分からないが[br]
+殺されそうな勢いだぞ……）[np]
+[cb]（しかし、ハルヒのやつはこういうときは本当に生き生きとしてるな）[np]
+
+:prologue_kaigi
+@backSet color=black fade
+@textShowMessage
+@textShowName kyon
+[cb]（こうして、ＳＯＳ団全体会議は[br]
+長門の到着を以って開催される運びとなった）[np]
+@backSet file=bg_bushitu wipe
+@charaShowCenter file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+さて、みなさん。[br]
+ご存知のように我々の部室で盗難と思わしき事件が発生しました。[np]
+そこで、まずはいつなくなったのかを把握するためにもみなさんのアリバイを教えてください。[np]
+@charaHideAll
+@charaShowLeft file="chara/koizumi_shomentachi" x=-50
+@charaShowRight file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+まずは昨日よね。[np]
+昨日もみくるちゃんがメイド服を着ていたし、帰るときは確かに衣装かけにかけて帰ったわ。[np]
+@textShowName koizumi
+ふむ……。[br]
+今日の放課後前に部室に来た人はいますか？[br]
+ええ、昼休みとかのことです。[np]
+@textShowName
+………[np]
+@textShowName koizumi
+いないみたいですね。[np]
+となると、[br]
+今日最初に部室に来たのは？[br]
+朝比奈さんでしょうか？[np]
+@textShowName kyon
+いや、俺だ。[np]
+部室にきてみたら珍しく誰もいなかったんで、[br]一人で将棋をやっていた。[np]
+@textShowName koizumi
+ああ、その机に広がっているのが[br]
+それですね？[np]
+で、あなたはそのとき、[br]
+メイド服が部室にあったかどうか覚えていますか？[np]
+@textShowName kyon
+いーや、あいにく部室に来るたびにメイド服のチェックをしてるわけでもないんでな。[np]
+あったのか、なかったのか、[br]
+さっぱりわからん。[np]
+@textShowName koizumi
+なるほどなるほど。[br]
+その後、朝比奈さん、涼宮さん、[br]
+そして僕がやってきた、と。[np]
+それで間違いありませんか？[np]
+@textShowName kyon
+ああ、間違いないね。[np]
+@charaShowRight file="chara/mikuru_shomentachi" wipe
+@textShowName mikuru
+キョンくんに外に出てもらった後、メイド服を探したんですけどどこにもなくて。[np]
+探してるときに涼宮さんがきたから聞いてみたら……。[np]
+@textShowName koizumi
+なくなっていることが[br]
+判明した、と。[np]
+@charaShowRight file="chara/haruhi_shomenjishin" wipe
+@textShowName haruhi
+そうよ！[np]
+@charaShowRight file="chara/haruhi_shomentachi"
+その後、しばらくしたら有希が[br]
+きたってわけね。[np]
+@charaShowRight file="chara/nagato_shomentachi" wipe
+@textShowName nagato
+…（コクッ）[np]
+@itemGetShow 3
+@textShowName koizumi
+部室に来るのが長門さんにしては随分遅かったように思えますが、何か用事でもあったのですか？[np]
+@textShowName nagato
+コンピュータ研に寄った。[np]
+@textShowName koizumi
+なるほど。[br]
+だから今日は遅かったのですね。[np]
+@textShowName nagato
+…（コクッ）[np]
+@itemGetShow 4
+@textShowName koizumi
+メイド服は昨日帰るまでは存在し、今日朝比奈さんが気づいたときには無くなっていたということですね。[np]
+@bgmPlay
+となると……。[np]
+現在の情報で最も怪しいのは。[np]
+@charaShowRight file="chara/haruhi_shomenjishin" wipe
+@textShowName haruhi
+キョンね！[np]
+@textShowName kyon
+@sePlay file="場面強調"
+ば、ばかな。[np]
+@charaShowRight file="chara/haruhi_shomenjitome"
+@textShowName haruhi
+つべこべ言わずにさっさと白状すれば罪は軽いわよ？[np]
+@textShowName kyon
+俺のわけないだろ！[np]
+@textShowName koizumi
+まぁまぁ。[br]
+一度手荷物を改めさせてもらってもいいですか？[np]
+疑惑が一番簡単に晴れますよ。[np]
+@textShowName kyon
+しょうがない。[br]
+好きにしろよ。[np]
+
+:prologue_tsumi
+@backSet color=black fade
+@backSet file=bg_bushitu wipe
+@textShowMessage
+@charaShowCenter file="chara/haruhi_shomenjitome" wipe
+@textShowName haruhi
+まさか本当に……[br]
+キョンだったなんて……。[np]
+@bgmPlay file="tuikyu"
+@itemShow 5
+@textShowName kyon
+[cb]（なんてこった……）[np]
+[cb]（あろうことかメイド服付属の靴が俺の荷物の中から現れた）[np]
+[cb]なぜだ？どういうことだ？）[np]
+@itemHide
+@itemGetShow 5
+@textShowName haruhi
+@charaShowCenter file="chara/haruhi_shomengiwaku"
+キョ～～ンッ！！[np]
+こういうのは隠したって簡単にばれるものなのよ。[np]
+まったくなんて馬鹿なことを……。[np]
+@textShowName kyon
+[cb]（さっきまで犯人を殺すと息巻いていたハルヒだが、なぜだか今は可哀想なやつを見る目をしている……）[np]
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+@charaShowRight file="chara/mikuru_shomentachi" wipe
+@textShowName mikuru
+キョンくん……。[br]
+言ってくれれば写真くらい撮ってもよかったのに。[np]
+何も盗まなくても……。[np]
+@textShowName kyon
+[cb]（朝比奈さんまで涙目で真剣にじっとこちらを見つめている。）[np]
+いやいやいや。[br]
+あのですね、そんな目でこちらを見ないでください。[np]
+これは何かの間違いだ。[br]
+そう、陰謀。[br]
+陰謀に違いない。[np]
+@textShowName haruhi
+あんたね……。[br]
+この期に及んでまだそんなこといってるの？[np]
+そんなに飢えてたなら言ってくれたら良かったのに。だから教室とかでも時々間抜け面してたりしたのね。[np]
+@textShowName kyon
+待ってくれよ。[br]
+落ち着いて考えてみてくれよ？[np]
+この体操着入れは昨日俺が部室に置き忘れたものだ。[np]
+第一、今日はうちのクラスは体育の授業なんてなかったろ？[np]
+わざわざ体操着入れを持ってくる意味がないじゃないか。[np]
+@charaShowLeft file="chara/haruhi_shomentachi"
+@textShowName haruhi
+うぅむ、それは確かに。[np]
+@itemShow 5 right
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+大体、キョン。[br]
+これは一体何よ。[br]
+なんてものに体操服を入れてるの。[np]
+@itemHide
+@textShowName kyon
+いやぁ、丁度いい袋がそれしかなくてなぁ。[np]
+@bgmPlay
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+@charaShowRight file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+だいたい話は分かりました。[np]
+メイド服の靴はなぜか体操着入れに入っており、[np]
+キョンさんは、この体操着入れは忘れ物だと主張されている。[np]
+これはもう少し調査が必要なようですね。[np]
+実は昨日の放課後から今日の放課後までの間に部室に入った人間がいるのかもしれないし、[np]
+体操着入れが忘れ物というのが嘘なのかもしれない。[np]
+この件に関しては僕が調査してみたいと思います。[np]
+どうでしょうか、調査の結果が出たらもう一度話し合うっていうのは？[np]
+@charaShowLeft file="chara/haruhi_shomentachi"
+@textShowName haruhi
+そうね、それがいいわ。[br]
+まだこれだけじゃキョンが犯人って決まったわけじゃないし。[np]
+@backSet color=black fade
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;裁判前
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@textShowMessage
+@textShowScene line1="某月某日　午後３時２３分" line2="校内裁判所　被告人控え室"
+@backSet file=bg_hikae fade
+@bgmPlay file="reserve"
+@textShowName kyon
+[cb]（何がなんだか分からないまま、事件から数日が過ぎた）[np]
+って、おいおい。[br]
+校内裁判所ってどこだよ、一体？[np]
+@charaShowCenter file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+まーた間抜け面して、[br]
+自分の立場わかってるの、キョン？[np]
+ま、安心しなさい。[br]
+@charaShowCenter file="chara/haruhi_shomenjishin"
+団長自ら、団員の潔白を証明してあげるわ！[np]
+私が弁護するからには、[br]
+凶悪犯罪者だって無罪になるんだから！[np]
+@textShowName kyon
+おいおい、無茶いうなよ。[np]
+@charaShowCenter file="chara/haruhi_shomenkanashimi"
+@textShowName haruhi
+え…無実…なんでしょ？[np]
+@textShowName kyon
+当たり前だろ。[br]
+なにが悲しくて、この俺が朝比奈さんのメイド服を盗まにゃならん。[np]
+盗んだらもうメイド朝比奈さんを拝めなくなってしまうではないか。[np]
+@charaShowCenter file="chara/haruhi_shomentachi"
+@textShowName haruhi
+そ、そうよね！[np]
+私が弁護してあげるんだから、[br]
+んー、そうね……。[np]
+@charaShowCenter file="chara/haruhi_shomenjishin"
+もはやただの弁護士じゃないわ！[br]
+弁護士を越えた弁護士。[br]
+[w 1000]
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+いわば超先生よ！[np
+ハルヒ『超先生』と呼びなさい！[br]
+ありったけの尊敬と畏怖をこめて！[np]
+@backSet file=bg_hikae fade
+@charaShowCenter file="chara/haruhi_shomenjishin"
+@textShowName kyon
+[cb]（実際、こういうときに限っては[br]
+ハルヒの根拠不明な自信は心強い）[np]
+@itemGetShow 0
+[cb]（この自信満々の顔を見ていると、本当に凶悪犯罪者でも何とかしてしまうのではないかと思えてくる）[np]
+よし、超先生。[br]
+ここはいっちょよろしく頼むぜ。[np]
+@textShowName haruhi
+任せなさい！[np]
+@backSet color=black fade
+@bgmPlay
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;裁判開始
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@textShowMessage
+@textShowScene line1="某月某日　午後３時３０分" line2="校内裁判所　法廷"
+@itemGetNoshow 10
+@itemGetNoshow 11
+@itemGetNoshow 12
+@itemGetNoshow 13
+@itemGetNoshow 14
+@courtSetJudgeBack fade
+@bgmPlay file="kaitei"
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130 wipe
+@textShowMessage
+@textShowName mori
+さて、[br]
+これより文芸部室内で起こった盗難騒ぎについての裁判を始めます。[np]
+弁護人も検察官もよろしいですね？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName haruhi
+ええ、問題ないわ。[np]
+@courtSetProsecutorBack
+@textShowName koizumi
+こちらも準備万端です。[np]
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+って、古泉くんはまだ分かるけど、なんで森さんがこんなところにいるのよ？[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+ふふ……[br]
+あるときはメイド、あるときはＯＬ風、あるときは裁判官……[np]
+謎の多い女はいいと思いませんか？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+むぅ……、たしかに。[br]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+まぁいいわ。誰が裁判官でも私が勝つだけだもの。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+そうです、その意気です。[np]
+被告人であるキョンさんの運命はまさに涼宮さんの両肩にかかっていると言っても過言ではありません。[np]
+涼宮さん。[br]
+こういった裁判に臨むのははじめてですよね？[np]
+そうですね……。[br]
+最初に簡単な質問をしてみましょうか。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+別に大丈夫よ。[br]
+準備万端整ってるし、何も問題ないわ。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+まあまあそう言わずに。[np]
+それでは涼宮さん。[br]
+
+:hikoku_ha_dare
+まず被告人の名前は分かりますか？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+そんなの考えるまでもないわ。[np]
+:hikoku_ha_dare_show
+@itemShowKiroku x="632" y="541" target="hikoku_ha_dare_show"
+@textShowFull
+今回の裁判の被告人の名前は……？[br]
+[br]
+\　[link target="hikoku_jun"]ジュン[/link][br]
+\　[link target="hikoku_kyon"]キョン[/link][br]
+\　[link target="hikoku_chon"]ガルガステテコビッチ３世[/link][br]
+[np]
+
+:hikoku_jun
+@textShowName haruhi
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowMessage
+ジュンね。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+何ですか、その人形と戯れてたり、通販に明け暮れてたり、あるいは政治家みたいな名前は？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+じょ、冗談よ冗談。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+とりあえず冗談は結構ですので、[br]
+次は真面目に答えて下さいね。[np]
+それでは改めてうかがいます。[br]
+@goto target="hikoku_ha_dare"
+
+:hikoku_chon
+@textShowName haruhi
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowMessage
+ガルガステテコビッチ３世よ。[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+お、おいハルヒ。[br]
+いつから俺はそんなわけのわからん名前になったんだ？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+じょ、冗談よ冗談。[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+とりあえず冗談はもういいから、[br]
+次からは真面目に頼むぞ……。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+それでは改めてうかがいます。[br]
+@goto target="hikoku_ha_dare"
+
+:hikoku_kyon
+@textShowName haruhi
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowMessage
+キョンに決まってるじゃない。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+その通りです。[np]
+では、次の質問です。[np]
+今回の事件の内容は何なのか、分かりますか？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+当然わかるわよ。[np]
+それは……。[np]
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+[cb]（あ、あれ？[br]
+やばい、何だったかしら。[br]
+思い出せないわ……）[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomengiwaku" x=0 y=0
+@textShowName kyon
+お、おい？[br]
+大丈夫か、ハルヒ？[np]
+事件のことは『法廷記録』にいろいろ書いてあるからな。[np]
+もし思い出せないようなら、あとで確認しといてくれよ？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+わ、わかってるわよ！[np]
+[cb]（法廷記録ね、後で見ておこうかしら）[np]
+
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+それではお答えください。[np]
+:jiken_ha_nani
+今回の事件の内容は何ですか？[np]
+:jiken_ha_nani_show
+@itemShowKiroku x="632" y="541" target="jiken_ha_nani_show"
+@textShowFull
+一体何が起こったのか……？[br]
+[br]
+\　[link target="jiken_ha_satsujin"]ミクルちゃんが殺された[/link][br]
+\　[link target="jiken_ha_shissou"]ミクルちゃんが神隠しにあった[/link][br]
+\　[link target="jiken_ha_nusumi"]メイド服が盗まれた[/link][br]
+[np]
+
+:jiken_ha_satsujin
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+残念なことに……。[br]
+ミクルちゃんが何者かによって殺されてしまったのよ……。[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/mikuru_shomentachi" x=0 y=0
+@textShowName mikuru
+ふえっ？[br]
+わ、私は生きてますよぅ。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+涼宮さん。[br]
+次は真面目にお願いしますよ。[np]
+もう一度聞きます。[br]
+@goto target="jiken_ha_nani"
+
+:jiken_ha_shissou
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+ミクルちゃんが神隠しにあって[br]
+しまったのよ！[br]
+どこいっちゃったのよ、もう！[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/mikuru_shomentachi" x=0 y=0
+@textShowName mikuru
+ふえっ？[br]
+わ、私はここにいますよぅ。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+涼宮さん。[br]
+次は真面目にお願いしますよ。[np]
+もう一度聞きます。[br]
+@goto target="jiken_ha_nani"
+
+:jiken_ha_nusumi
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+あろうことかメイド服を盗んだバカがいるのよ！[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+そうです。[br]
+その通りです。[np]
+@bgmPlay
+どうやら準備は万端のようですね。[br]
+それでは、審理を始めます。[np]
+まずは検察官である古泉が証人を呼んでください。[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName koizumi
+そうですね。[br]
+まず、被告人の話を聞きたいと思います。[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+なんか古泉が言ってるけど、[br]俺はどうすればいいんだ？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+ま、行くしかないんじゃない？[np]
+ぼろは出さないように気をつけるのよ。[np]
+@backSet color="black" fade
+@courtSetWitnessBack fade
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+[w 1000]
+
+@bgmPlay file="kaitei"
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+さて。[np]
+被告人は朝比奈さんのメイド姿についてどのように思っていますか？[np]
+@charaShowCenter file="chara/kyon_shomenegao" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+そりゃもうあまりのかわいらしさに天使のように思ってるよ。[np]
+朝比奈さんがついでくれるお茶は、たとえ水道水でもおいしいね。[np]
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+[cb]（いきなり核心からくるわね！）[np]
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+さて、その朝比奈さんのメイド服が盗まれてしまったわけです。[np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+まったく不届きな輩もいたものだ。これから俺は何を楽しみに[br]部室にいけばいいのだ。[np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+先日の我々の話し合いでは結局、[br]被告人が盗んだのか、第三者が盗んだのか、決着がつきませんでした。[np]
+しかし、僕は第三者などいなく、[br]被告人が盗んだものと考えます。[np]
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+@sePlay file="机を叩く"
+どういうことよ、古泉くん！[np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+おい、落ち着けよ、ハルヒ……。[np]
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+@sePlay file="机を叩く"
+適当なこというとただじゃすまないわよ！[np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+いやいや、何も適当に言っているわけではありません。[np]
+被告人、当日の人の流れについて証言していただけますか？[np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+たしか……俺が最初に部室に入っただろ。[np]
+次に朝比奈さんが来て、着替えるというので俺は部室から出た。[np]
+出るときに丁度ハルヒがやってきて朝比奈さんの邪魔をするためにそのまま部室へ入った。[np]
+部室の外でぼんやり待っていると、やがて古泉がやってきた。[np]
+その後、着替えが終わったから部室に入るとメイド服がなくなっていることを知らされた、という感じか。[np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+その通りです。[np]
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+そして真っ先に部室に来ていた被告人がもっとも怪しい、というわけです。[np]
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+何よそれ。怪しいってだけで[br]証拠も何もないじゃない。[np]
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+いえいえ、それがいたんですよ。[np]
+@bgmPlay
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@sePlay file="机を叩く"
+被告人がメイド服を盗んでいったところを見た、という人物が。[np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+@sePlay file="犯人ショック"
+なんだって？[np]
+[cb]（そんなバカな……）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+それは話が早いですね。[br]
+どんな人物ですか？[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName koizumi
+コンピュータ研の部長です。[np]
+彼は文芸部室からメイド服を持ち去る被告人を目撃しているのです！[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowMessage
+@textShowName mori
+古泉、その証人を呼んでください。[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName koizumi
+はい。[np]
+@charaShowCenter file="chara/kyon_shomengiwaku" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+[cb]（なんだかおかしなことになってきたぞ……）[np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+当日、部室等の廊下でぼんやり突っ立っていたコンピュータ研部長を入廷させてください。[np]
+@backSet color="black" fade
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;証人喚問
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@itemGetNoshow 15
+@courtSetWitnessBack fade
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+@bgmPlay file="kaitei"
+@textShowName comp
+どうもこんにちは。[br]おなじみ、コンピュータ研の部長です。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+では、[br]
+早速ですが証言をお願いします。[np]
+あなたが事件当日に見たことを[br]包み隠さず話してください。[np]
+@bgmPlay
+@testimonyRun file="zin1" bgm="jinmon_mode"
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomenaseri" x=0 y=0
+@bgmPlay
+@textShowName kyon
+ば、ばかな……。[np]
+やってもいないことの目撃証言なんて、そんなのありか？[np]
+まさか、俺は実はすでに気が狂っていて無意識のうちにメイド服を盗んでいたのか……？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@bgmPlay file="shinjitsu"
+@textShowName haruhi
+何とち狂ってるの、キョン。[np]
+こんなの、キョンが嘘ついてるか、証人が嘘ついてるか、[br]二つに一つでしょ。[np]
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+……盗んでないんでしょ？[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+あ、当たり前だろ……。[br]
+俺が盗むはずないじゃないか。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+それなら証人が嘘ついてるに決まってるわよ。[np]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+見てなさい。こんなミエミエの嘘、[br]すぐに私が破ってやるんだから！[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+そ、そうだよな……。[br]
+嘘に決まってるよな。[np]
+@charaShowCenter file="chara/kyon_shomenegao" x=0 y=0
+まじで俺の運命はハルヒにかかってるみたいだ。頼むぜ、ハルヒ。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tere" x=0 y=0
+@textShowName haruhi
+だ、団員の身の潔白を証明するのは団長の仕事だからね。[np]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+我がＳＯＳ団からメイド服盗難者なんて出したくないもの。[np]
+ちょっとコンピ研部長を痛めつけてくるわ。[np]
+徹底的にゆさぶって、決定的な矛盾を含む証拠をつきつけてやるわ！[np]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;第一回尋問
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@bgmPlay
+@inquiryRun file="zin1" bgm="jinmon_mode"
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+人の多かった廊下。[br]
+メイド服を持ち廊下に出たキョン。[br]
+それを見ていたコンピ研部長。[np]
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+な、なんだよ。[np]
+@charaShowLeft file="chara/haruhi_igi" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+@sePlay file="場面強調"
+あなたの言っていることはおかしいわ。[np]
+@courtShowIgi right
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+@sePlay file="机を叩く"
+[w 500]
+@charaShowRight file="chara/koizumi_igi" x=0 y=0
+証人が言っていることに[br]おかしい部分はありません。[np]
+弁護人は証人を不当に脅して偽の情報を引き出そうとしています。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+そうですね。[br]私にもおかしい部分があるとは思えませんが……。[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+どうなんですか、涼宮さん。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+ちょっとちょっと。[np]
+@charaShowLeft file="chara/haruhi_setsumei" x=0 y=0
+@bgmPlay file="igiari"
+@itemShow 2 right
+キョンがこんな目立つ服を持って、大勢の人ごみの中に出たっていってるのよ？[np]
+どう考えてもおかしいでしょうが。[np]
+それが本当なら、[br]証人はもっといるはずよ。[np]
+@itemHide
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+@sePlay file="犯人ショック"
+あっ！[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+言われてみれば確かにそうですね。[np]
+どうなのですか、証人。[np]
+@courtSetWitnessBack
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@textShowName comp
+え、えーと……それは……[np]
+@courtShowMatta right
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+その点に関してですが、[br]証人は始めての法廷で少々緊張しているようです。[np]
+先ほどの証言は、僕が聞いた証言とは若干異なります。[np]
+もう一度証言させなおしたいと思いますが、いかがですか？[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+そうなのですか？[np]
+まぁ、仕方ありません。証言のやり直しを認めましょう。[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_ojigi" x=0 y=0
+@textShowName koizumi
+ご理解、ありがとうございます。[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@courtSetWitnessBack noscr
+@textShowName comp
+あ、そう、そうだ！思い出した！[np]
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+すいません、少し勘違いをしていました。[np]
+証言をしなおします。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+……次は正確にお願いしますよ。[np]
+@bgmPlay
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;第二回尋問
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@testimonyRun file="zin2" bgm="jinmon_mode"
+@courtSetJudgeBack
+@bgmPlay
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+なるほど、体操着入れに入った[br]
+メイド服を見た……。[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+それなら他の人は気づかないかも[br]しれませんね。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@textShowName haruhi
+[cb]（確かに一見するとおかしい部分はないような気もするわね……）[np]
+@bgmPlay file="suspence"
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+[cb]（やばいわ……）[np]
+[cb]（はったりをかまして時間稼ぎしてよく考えてみないと）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+どうですか、涼宮さん。[br]
+今の証言で問題はありませんか？[np]
+@textShowFull
+今の証言で問題はありませんか？[br]
+[br]
+\　[link target="hattari_ok"]問題ある[/link][br]
+\　[link target="hattari_ng"]問題ない[/link][br]
+[np]
+
+:hattari_ng
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowMessage
+@textShowName haruhi
+うーん、問題ないような気がするわね。[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+そんな……。[np]
+俺はやってないぞ。[br]
+頼むよ、ハルヒ。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+とは言ってもあの証言、おかしい部分はなさそうなのよね。[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomengiwaku" x=0 y=0
+@textShowName kyon
+おいおい、尋問もしないうちから結論をださないでくれよ。[np]
+俺は本当に盗んでないぞ？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@textShowName haruhi
+[cb]（確かにこのままじゃ、そのままキョンが犯人になっちゃうわね……）[np]
+[cb]（尋問すれば何かわかるかもしれないし、ここはひとつはったりをかましておくべきかも）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+では涼宮さん。[br]
+念のため、もう一度確認します。[np]
+今の証言で問題ありませんか？[np]
+@textShowFull
+今の証言で問題はありませんか？[br]
+[br]
+\　[link target="hattari_ok"]少しは問題ある[/link][br]
+\　[link target="hattari_ng2"]全然問題ない[/link][br]
+[np]
+
+
+:hattari_ng2
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowMessage
+@textShowName haruhi
+うーん、やっぱり全然問題ないわ。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+そうですか、残念です。[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+となるとやはり、被告人が犯人ということになりますかね。[np]
+@goto target="nolife"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;犯人を暴け！
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:hattari_ok
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@textShowMessage
+@textShowName haruhi
+ええ、やはり違和感を感じるので[br]尋問させてほしいわ。[np]
+@courtShowMatta right
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@courtSetProsecutorBack noscr
+@sePlay file="机を叩く"
+[w 500]
+@textShowName koizumi
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+この証言に矛盾は見当たりません。[np]
+弁護人は明らかに、時間稼ぎのために尋問を行おうとしています。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+そうですね、私もこれ以上の尋問は必要ないかと思いますが……。[np]
+@courtShowIgi right
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@textShowName haruhi
+@sePlay file="机を叩く"
+[w 500]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+矛盾があるかないか、それはこれから明らかになるわ。[np]
+そして私にはその矛盾を指摘できる根拠があるの！[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+まぁ、涼宮さんがそこまでいうのならば……。[np]
+@bgmPlay
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+よろしいでしょう。[br]
+尋問を認めます。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+[cb]（なんとか首の皮一枚つながったって感じね……）[np]
+
+@inquiryRun file="zin2" bgm="jinmon_are"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;馬脚を現したコンピ研
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@charaShowLeft file="chara/haruhi_igi" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+@sePlay file="机を叩く"
+ふふん。[br]
+ついに尻尾をつかんだわよ。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+……？[np]
+どうしたんですか、涼宮さん。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+そこの証人は、体操着入れ、と言ってたわよね。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+言ってましたね。[br]
+それが何か？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+そもそもそれがおかしいのよ。[np]
+@bgmPlay file="tuikyu"
+@itemShow 5 right
+@charaShowLeft file="chara/haruhi_setsumei" x=0 y=0
+だってこれ、[br]
+どうみても体操着入れには見えないじゃない？[np]
+@itemHide
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@courtSetWitnessBack noscr
+@textShowName comp
+@sePlay file="犯人ショック"
+っ！！！[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+確かに体操着入れには見えないですね。[np]
+というか、何ですかこれは？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+シャミセン――猫の餌の袋よ。[np]
+ただし、昨日は確かにキョンの体操着が入っていたけどね。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+？[np]
+言っていることがよくわからないのですが、一体どういうことですか？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+この袋をパッと見で体操着入れだと思う人はいないわ。[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@courtSetWitnessBack
+だけど彼は体操着入れを持ったキョンを目撃したと言った。[np]
+つまり彼は、なぜか猫の餌の袋に体操着が入っていることを知っていたことになるわ。[np]
+@courtShowIgi right
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+@sePlay file="机を叩く"
+[w 500]
+@charaShowRight file="chara/koizumi_igi" x=0 y=0
+弁護人の発言はあくまで推測であって証拠がありません。[np]
+@backSet file="bg_koizumi_up"
+@sePlay file="異議あり"
+僕はこの袋が体操着入れだと一目でわかりましたよ。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+@textShowName mori
+古泉、それは無理がありすぎます。[np]
+確かにどう考えても、猫の餌の袋を見て体操着入れだと思う人はいませんよ。[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+涼宮さん、続けてください。[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+ご理解、感謝するわ、森さん。[np]
+クラスメイトでもない彼が餌袋に体操着が入っていることを知るには、実際に袋の中身を見るしかないわ。[np]
+そしてこの袋は、昨日からずっと文芸部室内に置きっぱなしだった。[np]
+@backSet file="bg_haruhi_up"
+@sePlay file="異議あり"
+つまり！[np]
+そう、彼は事件当日、キョンが部室に行く前までに文芸部室に入ったのよ！[np]
+@courtSetWitnessBack noscr
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@textShowName comp
+@sePlay file="犯人ショック"
+ば、ばかな！[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+そ、そうだ！[np]
+こいつはいつも体操着を餌袋に入れてもってきていたんだよ！[np]
+だから僕は前に見たことがあったんだ！[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+やれやれ……。[br]
+そんなバカな。[np]
+この袋に入れてきたのは事件前日の体育のときだけだぜ。[np]
+さすがに毎回こんな猫の餌の袋じゃ変人だろ。[np]
+いつもは普通の鞄に入れてるのが疑わしいなら、うちの教室のやつにでも聞けばいい。[np]
+@courtSetWitnessBack noscr
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@textShowName comp
+@sePlay file="犯人ショック"
+ううっ……。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+@textShowName mori
+ここにきて事件は思わぬ展開を迎えてきました。[np]
+涼宮さん、もしかしてあなたは犯人が分かっているのではないですか？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+@sePlay file="机を叩く"
+[w 500]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+もちのろんよ！[br]
+[cb]（確証はまったくないけどね！）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+@textShowName mori
+聞かせていただきましょう。[np]
+:hannin
+涼宮さん、犯人は一体誰ですか？[np]
+@itemSelect item="15" success="hannin_ok" miss="hannin_ng" charaonly kurae right
+
+:hannin_ng
+  @textShowMessage
+  @textShowName haruhi
+  犯人は、この人です！[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  ……今までの話で考えると、その人は犯人ではないかと思いますが？[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  ……やっぱりそう、思いますか。[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  ええ。[np]
+  涼宮さん。もっと、ちゃんと考えてから発言するように。[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @textShowName haruhi
+  @courtReduceLife
+  [cb]（……森さんの心証が悪くなったみたいね……）[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+  @textShowName mori
+  それでは改めて……[br]
+  聞かせていただきましょう。[np]
+@goto target="hannin"
+
+:hannin_ok
+@textShowMessage
+@textShowName haruhi
+それはもちろん、[br]そこにいるコンピ研の部長よ！[np]
+@courtSetWitnessBack
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+彼がメイド服を盗みに部室に入ったときに、近くにあったキョンの体操着入れに靴を入れたのよ。[np]
+だからこの猫の餌の袋を体操着入れだと言ったのよ！[np]
+@courtShowMatta right
+@charaShowRight file="chara/koizumi_igi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+もし仮にそうだとしても、[br]なぜ彼は気づかれずに我々の部室に入ることができたのですか？[np]
+いつもなら、長門さんがいるはずですよ。[np]
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+そ、そうだ！[np]
+君らの部室が無人だったなんてことは僕は知らないんだ。[np]
+どうすれば君らの部室が無人ということが分かるっていうんだい？[np]
+@textShowMessage
+@textShowName haruhi
+[cb]（……あまりに簡単すぎて[br]笑っちゃうわね）[np]
+:hannin_aribai
+[cb]（コンピ研部長が、部室が無人だと知りえる方法はこれよ！）[np]
+@itemSelect item="4" success="hannin_aribai_ok" miss="hannin_aribai_ng" kurae
+
+:hannin_aribai_ng
+  この証拠品は、犯人の主張の矛盾をハッキリ示しています！[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  ……その証拠品とアリバイが、どう関係するのですか？[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  ……しませんかね、やっぱり。[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  全然しませんね。[np]
+  涼宮さん。もっと、ちゃんと考えてから発言するように。[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @textShowName haruhi
+  @courtReduceLife
+  [cb]（……森さんの心証が悪くなったみたいね……）[np]
+  @charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+  @courtSetWitnessBack
+  @textShowName comp
+  さあ、どうすれば僕は君らの部室が無人ということが分かるっていうんだい？[np]
+  @textShowMessage
+  @textShowName haruhi
+@goto target="hannin_aribai"
+
+:hannin_aribai_ok
+簡単な話よ。[np]
+当日、有希がコンピ研にいっていたんだから、有希が文芸部室にいないのは当たり前だし、[np]
+文芸部室にまだ誰もいなかったことも聞けばわかるわ。[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+なるほど、確かに。[np]
+どうですか、証人。[br]
+他に言うことはありますか？[np]
+@courtSetWitnessBack
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@textShowName comp
+@sePlay file="犯人ショック"
+う……[np]
+@textShowLoud value="う、うおおおおおおおおおおおおおおおおっ！！"
+ああ、そうだ！[br]
+確かに僕が盗んだのさ！[np]
+でも、おたくの団長さんにばれると怖いから罪を擦りつけようと思ったんだ！[np]
+たまたま口が開いてた体操着の中にメイドの靴だけを入れて偽装工作をしたんだ……。[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+まさか、それが猫の餌の袋だったとは……。[np]
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+なぜ盗もうとなんか思ったのよ。[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+長門さんの……。[np]
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+有希の？[np]
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+@bgmPlay
+@textShowLoud value="メイド姿が見たかったんだぁぁぁぁぁぁぁっ!!!!"
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+あ、あっそう……。[np]
+@backSet color="black" fade
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;裁判終了
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@courtSetJudgeBack fade
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+@bgmPlay file="kaitei"
+@textShowMessage
+意外なことに証人が犯人という結論を迎えてしまいました。[np]
+もはや、これ以上の審議の必要性を認めません。[np]
+形式的なものとなりますが、被告人に判決を言い渡します。[np]
+@bgmPlay
+@courtShowPlea
+では、本日はこれにて閉廷！[np]
+
+@backSet color="black" fade
+@textShowName kyon
+[cb]（かくして、俺が犯人と疑われた事件も幕を閉じた）[np]
+@textShowScene line1="某月某日　某時刻" line2="文{ＳＯＳ団}芸部　部室"
+@backSet file="bg_bushitu" wipe
+@charaShowCenter file="chara/haruhi_shomenegao" wipe
+@bgmPlay file="shouso"
+@textShowName haruhi
+いやー、真犯人が見つかってよかったわねー。[np]
+@textShowName kyon
+まったくだ。ハルヒ超先生さまさまだな。[np]
+どこかの野郎なんてわざわざ証人までつれてきて俺を犯人扱いだぜ？[np]
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomenegao"
+@charaShowRight file="chara/koizumi_shomentere" wipe
+@textShowName koizumi
+ははは。申し訳ない。[np]
+@charaShowRight file="chara/koizumi_shomentachi"
+いやー、それにしても涼宮さんには脱帽ですよ。[np]
+まさか証人から罪の告白を聞くことになるとは思いませんでした。[np]
+@charaShowLeft file="chara/haruhi_shomenjishin"
+@textShowName haruhi
+ふっふっふ。[np]
+なんてったって私はＳＯＳ団団長だからね！[np]
+団員の困り顔を放っておいたら漢がすたるってなもんよ！[np]
+@charaShowLeft file="chara/haruhi_shomenegao"
+これからも私に任せなさい！[np]
+@charaHideAll
+@charaShowCenter file="chara/mikuru_shomentere" wipe
+@textShowName mikuru
+キョンくんじゃなくて本当によかったですぅ。[np]
+@charaHideAll wipe
+@textShowName kyon
+[cb]（一件落着ってことで一安心するとどっと気が抜けるな）[np]
+[cb]（……）[np]
+[cb]（………）[np]
+[cb]（…………）[np]
+[cb]（……そういや、コンピ研部長が最後に面白いことを言っていたが）[np]
+[cb]（確かに彼女も女の子なんだし、もしかしたら興味くらいはあるのかもしれない）[np]
+[cb]（そう、メイド服に興味があると思われるのは……）[np]
+@itemSelect item="13" success="ed_nagato" miss="ed_other" charaonly
+
+:ed_other
+@textShowName kyon
+@textShowMessage
+[cb]（……いやいや、違うだろ）[np]
+[cb]（もっと落ち着いて思い出そうぜ）[np]
+[cb]（もしかしたらメイド服に興味があると思われるのは……）[np]
+@itemSelect item="13" success="ed_nagato" miss="ed_other" charaonly
+
+:ed_nagato
+@textShowName kyon
+@textShowMessage
+[cb]（長門だよな）[np]
+@charaShowCenter file="chara/nagato_shomentachi" wipe
+[cb]（長門のほうを見てみると、波一つない目でこちらを見上げている）[np]
+[cb]（しかし俺にはこの長門の目から好奇心らしきものが見えるような気がした）[np]
+どうだ、長門。[np]
+メイド服に興味はないか？[np]
+@textShowName nagato
+…[w 500]…[w 500]
+@charaShowCenter file="chara/nagato_shomenshikou"
+…[w 500]…[w 500]
+@charaShowCenter file="chara/nagato_shomentachi"
+…[w 500]ある。[np]
+@charaHideAll
+@charaShowLeft file="chara/nagato_shomentachi"
+@charaShowRight file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+へぇ、有希も着てみたいの？[np]
+@charaShowRight file="chara/haruhi_shomenegao"
+こういうのに興味ないかと思ってたけど、やっぱり女の子ね！[np]
+@charaShowRight file="chara/haruhi_shomentachi"
+どれどれ、着替え手伝ってあげるわよ。[np]
+ほらほら、[br]
+野郎どもは出てった出てった。[np]
+@sePlay file="ドア開閉"
+[w 500]
+@backSet color="black" fade
+@backSet file="bg_rouka" fade
+@charaShowCenter file="chara/koizumi_shomentere" wipe
+@textShowName koizumi
+いやー、今回のことは本当に申し訳ありませんね。[np]
+コンピ研部長が猛烈にプッシュしてくるものですから、[np]
+@charaShowCenter file="chara/koizumi_shomentachi"
+僕としたことがつい、ね。[np]
+@textShowName kyon
+ふん……。[np]
+今回のことは貸しだからな。[np]
+@sePlay file="ドア開閉"
+[w 500]
+@charaShowCenter file="chara/mikuru_shomenegao" wipe
+@textShowName mikuru
+あのー。[np]
+着替えが終わったのでもう入っていいですよー。[np]
+@sePlay file="ドア開閉"
+[w 500]
+@backSet color="black" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@textShowName nagato
+どう……？[np]
+@textShowName kyon
+古泉……。[np]
+@textShowName koizumi
+はい、なんでしょう？[np]
+@textShowName kyon
+前言撤回だ。[np]
+こんなに萌える長門を拝むことができたんだ。[np]
+お前には感謝しなければいけないのかもしれんな。[np]
+@textShowName haruhi
+でしょ？[np]
+有希も似合うわよねー。[np]
+どう？有希。[br]
+これからもちょくちょく着てみるってのは？[np]
+@textShowName nagato
+……考えておく。[np]
+@textShowName kyon
+[cb]（最後の最後にこんなにいいものを拝めたんだ）[np]
+[cb]（裁判も時にはいいものかもしれないな）[np]
+@backSet color="black" fade
+@exit rescode="clear"

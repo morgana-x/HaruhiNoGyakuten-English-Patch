@@ -1,0 +1,8 @@
+@backSet file="bg_select" fade
+@itemGetNoshow 0
+@itemGetNoshow 1
+@itemSelect item="0" success="sel" miss="sel" charaonly
+
+:sel
+@backSet color="black" fade
+@exit

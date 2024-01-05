@@ -1,0 +1,3 @@
+@item no="0" name="消えたメイド服" comment="盗まれたメイド服。犯人の罠により濡れ衣を着せられるキョン。涼宮ハルヒの裁判デビュー!!" image="item_maid" type=chara
+@item no="1" name="盗撮事件" comment="気絶させられた朝比奈みくる。果たして部室で何をされたのか。彼女の記憶を取り戻せるか――" image="item_mikuru" type=chara
+@item no="2" name="ＳＯＳ団の危機" comment="仕組まれた偶然。ＳＯＳ団存続の危機を涼宮ハルヒは乗り越えられるのか!?" image="item_wansho" type=chara

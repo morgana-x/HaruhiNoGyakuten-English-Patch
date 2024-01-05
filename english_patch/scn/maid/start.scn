@@ -1,0 +1,1811 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;システムセットアップ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@courtSetLife 5
+@courtSetNolifeScenario target="start:nolife"
+@textShowMessage
+
+@goto target="prologue_comp"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;デバッグ領域
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	@courtSetGuideBack
+  @itemGetNoshow 0
+  @itemGetNoshow 1
+  @itemGetNoshow 2
+  @itemGetNoshow 3
+  @itemGetNoshow 4
+  @itemGetNoshow 5
+  @itemGetNoshow 10
+  @itemGetNoshow 11
+  @itemGetNoshow 12
+  @itemGetNoshow 13
+  @itemGetNoshow 14
+  @itemGetNoshow 15
+@goto target="debug"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;共通ゲームオーバー
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:nolife
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @bgmPlay file="kaitei"
+  @textShowName mori
+  @textShowMessage
+  This court finds no need[br]for further consideration.[np]
+  Furthermore,[np]
+  It does not require[br]time to decide the sentence[br]against the defendant.[np]
+  This case is[br]crystal clear.[np]
+  There is no room[br]for doubt![np]
+  It's time to sentence[br]The defendant![np]
+  @bgmPlay
+  @courtShowPlea guilty
+  The defendant will now[br]be placed in the custody[br]of the prosecutor[np]
+  The defendant will face[br]a regular trial[br]within one month. np]
+  Well then,[br]The court is now[br]closed today.[np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/kyon_shomenaseri" x=0 y=0
+  @textShowName kyon
+  N-No way...[np]
+  What does a regular[br]trial mean?[br]Is this really even a trial?[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  That's strange,[br]I wonder where[br]I went wrong...[np]
+  Oh! Even if Kyon[br]gets arrested,[br]I'll give him something.[np]
+  I'll leave your membership[br]in the SOS Brigade with you.[np]
+  So come back soon[br]after you're done[br]doing time![np]
+  @courtSetGuideBack
+  @charaShowCenter file="chara/mikuru_shomentachi" x=0 y=0
+  @textShowName mikuru
+  Please come back soon[br]as a real human being[br]Kyon...[np]
+  @charaShowCenter file="chara/nagato_shomentachi" x=0 y=0
+  @textShowName nagato
+  I recommend going[br]back in time and[br]starting over.[np]
+  @charaHideAll
+  @textShowName kyon
+  ……。[np]
+  [cb]（Why is this happening……）[np]
+@exit rescode="gameover"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;プロローグ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:prologue_comp
+@backSet color="black"
+@bgmPlay file="prologue1"
+@textShowMessage
+
+*pant*[np]
+*pant*[np]
+*pant*[np]
+As long as I have[br]this Asahina san's[br]maid outfit...[np]
+*pant*[np]
+*pant*[np]
+*pant*[np]
+But...[w 1000][br]
+You can definitely notice the[br]maid outfit is missing...[np]
+And this place's leader[br][w 50]is terrifying...[np]
+@charaShowCenter file="chara/comp_shomentachi" wipe
+@textShowName comp
+…[w 500]…[w 500]…[w 500][np]
+@sePlay file="発見"
+Oh that's right![br]
+If I blame him![np]
+@backSet color="black" fade
+@bgmPlay
+
+:prologue_kyon
+@textShowScene line1="某月某日　某時刻" line2="県立北高校部室棟　Corridor"
+@textShowMessage
+@textShowName kyon
+[cb](The relentless heatwave[br]battered the hallways.)[np]
+[cb](In spite of my dread[br]I approached the[br]SOS Clubroom.)[np]
+[cb](It's strange how people[br]can tolerate rooms without[br]an air conditioner.)[np]
+[cb](Especially since the[br]summer holidays are coming[br] up soon.)[np]
+Well,[br]
+no matter how you think,[br]it's hot anyway...[np]
+@backSet file=bg_rouka wipe
+@bgmPlay file="days"
+[cb](No doubt Asahina's maid[br]outfit and the tea she makes[br]are the only things I look to now.)[np]
+[cb](Asahina is a year older and[br]usually is dressed like a[br]maid while in the clubroom.)[np]
+[cb](This is because our club's[br]leader said so)[np]
+[cb](Asahina follows[br]their word very strictly.)[np]
+[cb](This cute senior forgets[br]to lock the clubroom[br]while changing so)[np]
+[cb](Sometimes when entering[br]I can encounter[br]her changing clothes)[np]
+[cb](Sorry to readers expecting[br]something obscene but I'm[br]a gentleman so I will knock)[np]
+@textShowName
+@sePlay file="扉を叩く"
+Knock[w 500] Knock[w 500][np]
+@textShowName kyon
+[cb](...No response,[br]appears to be dead silent.)[np]
+@textShowName
+@sePlay file="扉を叩く"
+Knock[w 500] Knock[w 500][np]
+@textShowName kyon
+[cb](That's rare.)[np]
+[cb](When Asahina is there,[br]I get a reply from inside.)[np]
+[cb](Otherwise Nagato opens[br]the door for me.)[np]
+[cb](By the way I can assure you[br]that Nagato is almost always[br]present in the clubroom.)[np]
+[cb](It's possible Nagato arrived[br]so early she already[br]left...)[np]
+...?[br]
+Is no one here yet?[np]
+
+:prologue_hitori
+@sePlay file="ドア開閉"
+[w 500]
+@backSet file=bg_bushitu wipe
+@textShowScene line1="某月某日　某時刻" line2="文{ＳＯＳ団}芸部　部室"
+@textShowMessage
+@textShowName kyon
+[cb](Upon entry, it's obvious[br]that no one is here.)[np]
+[cb](I should think that this[br]room has never been[br]locked before.)[np]
+@itemGetShow 1
+[cb](It's a bit boring when[br]no one is around...)[np]
+[cb](In order to get the upperhand[br]on Koizumi, I think I should[br]practise playing shogi[br]for the first time in awhile...)[np]
+@backSet color="black" fade
+@textShowName
+Tick[w 500][br]
+Tock[np]
+@backSet file=bg_bushitu fade
+@textShowName kyon
+[cb](Come on,[br]I'm getting tired[br]of playing shogi solo...)[np]
+@textShowName
+@sePlay file="扉を叩く"
+Knock[w 500] Knock[w 500][np]
+@textShowName kyon
+[cb](Oh,[br]looks like someone has[br]arrived)[np]
+@sePlay file="ドア開閉"
+[w 500]
+@charaShowCenter file="chara/mikuru_shomenegao" wipe
+@textShowName mikuru
+Kyon, Today you're early![br]
+It's strange that[br]Nagato isn't here.[np]
+Well I'll quickly change my[br]clothes and make some tea.[np]
+Oh, I'm sorry but...[br]
+Kyon...[np]
+@textShowName kyon
+Of course![br]
+I'll wait outside.[np]
+Please let me know when[br]you're done changing.[np]
+
+:prologue_haruhi
+@sePlay file="ドア開閉"
+[w 500]
+@backSet file=bg_rouka wipe
+@textShowMessage
+@charaShowCenter file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+Huh?[br]
+Why did you leave the[br]clubroom?[np]
+@charaShowCenter file="chara/haruhi_shomenjitome"
+It couldn't be that,[br]
+In front of the leader's eyes,[br]
+You were deserting us, Kyon?![np]
+@textShowName kyon
+[cb](While leaving the clubroom,[br]
+I ran into Haruhi entering)[np]
+[cb](Uh oh.)[np]
+Asahina is changing so,[br]
+I'm waiting outside[np]
+@charaShowCenter file="chara/haruhi_shomentachi"
+@textShowName haruhi
+Hmpth...[np]
+@charaShowCenter file="chara/haruhi_shomenegao"
+Well,[br]
+I might lend a hand.[np]
+@sePlay file="ドア開閉"
+[w 500]
+@charaHideCenter wipe
+@textShowName kyon
+[cb]（Before I could stop her,[br]
+Haruhi waved as she[br]
+disappeared into the room.)[np]
+[cb](Stay safe Asahina.[br]
+All I can do is pray)[np]
+@textShowName
+…[w 500]…[w 500]…[w 500][np]
+@textShowName kyon
+[cb](Normally Asahina[br]screams due to Haruhi's[br]careless help.)[np]
+[cb](But today it's been very[br]silent)[np]
+@charaShowCenter file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+Well,[br]
+It's pretty quiet again today.[np]
+@textShowName kyon
+[cb]（Koizumi came,[br]making a strange sound as[br]if he had seen Haruhi enter.）[np]
+Do you think so too?[np]
+@textShowName koizumi
+This may mean a new costume[br]has been prepared to surprise[br]you.[br]これはもしかすると、あなたをびっくりさせるために新たな衣装を用意とかしているのかもしれませんね。[np]
+@textShowName kyon
+Is that so?[br]
+I can't even imagine[br]what could be more surprising[np]
+@charaHideAll
+@charaShowLeft file="chara/koizumi_shomentachi" x=-50
+@charaShowRight file="chara/mikuru_shomentachi" wipe
+@textShowName mikuru
+Ummm.[np]
+@bgmPlay
+Since I couldn't change,[br]
+It's ok for you to[br]enter now[np]
+@textShowName kyon
+[cb](...?[br]
+After Koizumi and I looked at[br]each other)[np]
+[cb](We entered the room.)[np]
+
+:prologue_hakkaku
+@backSet color="black" fade
+@backSet file=bg_bushitu wipe
+@bgmPlay file="suspence"
+@textShowScene line1="某月某日　某時刻" line2="文{ＳＯＳ団}芸部　部室"
+@charaShowCenter file="chara/haruhi_shomengiwaku" wipe
+@textShowMessage
+@textShowName kyon
+[cb](Haruhi is pacing[br]back and forth[br]furiously in the clubroom)[np]
+Hey, Haruhi.[br]
+What are you angry about?[np]
+@textShowName haruhi
+This is an incident![br]
+Yes![br]
+A major incident![np]
+@textShowName kyon
+Well what happened?[np]
+@textShowName haruhi
+@charaShowCenter file="chara/haruhi_shomenjitome"
+Can't you tell?![np]
+@charaShowCenter file="chara/haruhi_shomengiwaku"
+Mikuru's Maid outfit[br]
+has disappeared![np]
+@textShowName kyon
+@sePlay file="場面強調"
+W-What?![np]
+@itemShow 2
+[cb](My soul's foundation,[br]
+Pretty angel maid Asahina's[br]maid outfit is gone?[np]
+@itemHide
+@itemGetShow 2
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+@charaShowRight file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+Hmmm.[np]
+It certainly is nowhere[br]to be found [br]on the rack.[np]
+It's obvious that[br]this needs to[br]be sorted out.[np]
+What do you think Suzumiya?[np]
+@charaShowLeft file="chara/haruhi_shomenjishin"
+@textShowName haruhi
+Ofcourse![br]
+How dare it be[br]taken without my say![br]
+This is unacceptable![np]
+I'll definitely[br]
+find them![np]
+Death penalty! Death![np]
+Let's find the perp[br]
+and give them death![np]
+@textShowName kyon
+[cb](I don't know who it is but[br]
+looks like they could[br]
+seriously die...)[np]
+[cb](However I must say[br]Haruhi is very lively[br]at these times.)[np]
+
+:prologue_kaigi
+@backSet color=black fade
+@textShowMessage
+@textShowName kyon
+[cb](Thus, the SOS Brigade's[br]
+meeting was decided to be[br]
+held when Nagato arrived.[np]
+@backSet file=bg_bushitu wipe
+@charaShowCenter file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+Well, everyone.[np]
+As you know, an incident[br]that appears to be theft[br]occurred in our club room.[np]
+So, first of all, please[br]give your alibi so we can[br]acertain when it disappeared.[np]
+@charaHideAll
+@charaShowLeft file="chara/koizumi_shomentachi" x=-50
+@charaShowRight file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+Firstly we should[br]talk about yesterday.[np]
+Mikuru wore the maid[br]outfit yesterday,[np]
+And I'm certain she hung it up[br]on the clothes rack[br]when she left.[np]
+@textShowName koizumi
+Hmmm...[br]
+Did anyone come to the[br]clubroom before now today?[np]
+Like at lunch?[np]
+@textShowName
+………[np]
+@textShowName koizumi
+It seems noone.[np]
+Then,[br]
+Who came first today?[br]
+Asahina?[np]
+@textShowName kyon
+No, it was me.[np]
+When I entered,[br]there was noone,[br]which is unusual[np]
+I was playing shogi by myself.[np]
+@textShowName koizumi
+Ah, that's what spread[br]out on that desk[br]
+Isn't it?[np]
+Then at that time,[br]
+do you remember if[br]the maid outfit was there?[np]
+@textShowName kyon
+No, unfortunately I don't check[br]the maid uniform everytime[br]I come to the club room.[np]
+I honestly have no idea,[br]
+whether it was there or not.[np]
+@textShowName koizumi
+I see, I see.[br]
+After that Asahina,[br]Suzumiya, and I came.[np]
+Is that correct?[np]
+@textShowName kyon
+Mmm, definitely.[np]
+@charaShowRight file="chara/mikuru_shomentachi" wipe
+@textShowName mikuru
+After asking Kyon to go outside,[br]I looked for the maid outfit,[br]but I couldn't find it anywhere.[np]
+While I was looking for it,[br]Suzumiya came,[br]so I asked her about it...[np]
+@textShowName koizumi
+It turned out that,[br]
+It was missing...[np]
+@charaShowRight file="chara/haruhi_shomenjishin" wipe
+@textShowName haruhi
+That's right![np]
+@charaShowRight file="chara/haruhi_shomentachi"
+After a while Yuki[br]
+came in[np]
+@charaShowRight file="chara/nagato_shomentachi" wipe
+@textShowName nagato
+…（コクッ）[np]
+@itemGetShow 3
+@textShowName koizumi
+It seems like Nagato[br]
+came to the club room[br]
+rather late.[np]
+But maybe she had[br]
+something to do?[np]
+@textShowName nagato
+I stopped by the computer lab.[np]
+@textShowName koizumi
+I see.[br]
+That's why you were[br]late today.[np]
+@textShowName nagato
+…（コクッ）[np]
+@itemGetShow 4
+@textShowName koizumi
+The maid uniform was[br]
+there until Asahina[br]
+left yesterday.[np]
+And when she returned[br]
+today, she noticed[br]
+It was gone.[np]
+@bgmPlay
+When it comes to that...[np]
+The most suspicous person is...[np]
+@charaShowRight file="chara/haruhi_shomenjishin" wipe
+@textShowName haruhi
+Kyon![np]
+@textShowName kyon
+@sePlay file="場面強調"
+W- Wait a minute.[np]
+@charaShowRight file="chara/haruhi_shomenjitome"
+@textShowName haruhi
+If you just confess now,[br]
+your punishment will be less,[br]right?[np]
+@textShowName kyon
+It can't be me![np]
+@textShowName koizumi
+Well,[br]
+Is it ok if I check your bag?[np]
+It will clear any[br]suspicions easily.[np]
+@textShowName kyon
+It can't be helped.[br]
+Do whatever you need.[np]
+
+:prologue_tsumi
+@backSet color=black fade
+@backSet file=bg_bushitu wipe
+@textShowMessage
+@charaShowCenter file="chara/haruhi_shomenjitome" wipe
+@textShowName haruhi
+I can't believe it...[br]
+I can't believe it was Kyon.[np]
+@bgmPlay file="tuikyu"
+@itemShow 5
+@textShowName kyon
+[cb](Oh god...)[np]
+[cb](The maid outfit's shoes[br]appeared in my bag.)[np]
+[cb](Why?[br]What is the meaning[br]of this?）[np]
+@itemHide
+@itemGetShow 5
+@textShowName haruhi
+@charaShowCenter file="chara/haruhi_shomengiwaku"
+Kyooonn!![np]
+If you hide something so[br]lamely like this,[br]it's easy to expose.[np]
+It's so stupid...[np]
+@textShowName kyon
+[cb](Until now, Haruhi was[br]excited about killing[br]the criminal.)[np]
+[cb](But for some reason now[br]she's looking at me sadly)[np]
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+@charaShowRight file="chara/mikuru_shomentachi" wipe
+@textShowName mikuru
+Kyon....[np]
+I would have been[br]happy to take a photo[br]if you had told me.[np]
+You didn't have to steal[br]anything...[np]
+@textShowName kyon
+[cb](Even Asahina is staring[br]intently at me with teary eyes.)[np]
+Hey now,[br]
+Please don't look[br]at me like that...[np]
+This is some kind[br]of mistake.[np]
+Yes, a conspiracy![br]
+It must be a conspiracy.[np]
+@textShowName haruhi
+Come on...[np]
+Are you still saying[br]things like that[br]at this stage?[np]
+I wish you would have told me[br]
+if you were that hungry.[np]
+That's why I sometimes[br]
+put on a goofy face[br]
+in the classroom.[np]
+@textShowName kyon
+Wait a minute,[np]
+Let's just calm down[br]and think about it,[br]okay?[np]
+I left this gym bag[br]in the club room[br]yesterday.[np]
+First of all,[br]we didn't have PE today,[br]right?[np]
+Then there's no point[br]in bringing gym uniform.[np]
+@charaShowLeft file="chara/haruhi_shomentachi"
+@textShowName haruhi
+Hmmm, that's true.[np]
+@itemShow 5 right
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+Also, Kyon.[br]
+What on earth is this?[np]
+What the heck are you[br]
+putting your gym clothes in?![np]
+@itemHide
+@textShowName kyon
+Well, that's the only[br]bag that it fits in[br]just right.[np]
+I forgot my usual[br]bag yesterday.[np]
+@bgmPlay
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomengiwaku"
+@charaShowRight file="chara/koizumi_shomentachi" wipe
+@textShowName koizumi
+I roughly understand the story.[np]
+For some reason,[br]the maid outfit's shoes[br]are in the gym bag.[np]
+Kyon claims that the[br]gym bag was something[br]he forgot.[np]
+It seems like this[br]requires a little[br]more investigation.[np]
+In fact,[br]
+someone may have entered the[br]
+room between yesterday and now[np]
+Maybe forgetting the[br]gym bag was a lie.[np]
+I would like to investigate[br]this matter.[np]
+How about we talk again[br]once the investigation is[br]complete?[np]
+@charaShowLeft file="chara/haruhi_shomentachi"
+@textShowName haruhi
+Yeah, that's good.[br]
+This doesn't mean Kyon[br]is the culprit yet.[np]
+@backSet color=black fade
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;裁判前
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@textShowMessage
+@textShowScene line1="某月某日　3:23PM" line2="School Court: Waiting Room"
+@backSet file=bg_hikae fade
+@bgmPlay file="reserve"
+@textShowName kyon
+[cb]（And so days passed by,[br]without me learning[br]anything new）[np]
+Hey! Haruhi![br]
+What on earth is[br]
+the school court?[np]
+@charaShowCenter file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+You're looking real[br]
+stupid again.[np]
+Do you understand your[br]position[br]
+Kyon?[np]
+Well, don't worry.[br]
+@charaShowCenter file="chara/haruhi_shomenjishin"
+The leader herself will prove[br]
+the innocence of the members![np]
+When I defend clients,[br]
+Even the most violent[br]
+criminals will be aquitted![np]
+@textShowName kyon
+Hey, hey.[br]
+I'm innocent you know![np]
+@charaShowCenter file="chara/haruhi_shomenkanashimi"
+@textShowName haruhi
+Eh...innocent...what?[np]
+@textShowName kyon
+Of course.[br]
+If I had've stole[br]
+the Maid Outfit,[np]
+I wouldn't be able to[br]
+praise Asahina in it anymore,[br]
+which would make me sad right?[np]
+@charaShowCenter file="chara/haruhi_shomentachi"
+@textShowName haruhi
+T-That's right![np]
+I'll defend you,[br]
+right....[np]
+@charaShowCenter file="chara/haruhi_shomenjishin"
+I'm not just a lawyer anymore![br]
+I'm a lawyer who is[br]
+more than a lawyer.[np]
+[w 1000]
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+@backSet file="bg_haruhi" fade
+A Super Sensei![np]
+Call me Haruhi the[br]
+Super Sensei! With the utmost[br]respect and awe![np]
+@backSet file=bg_hikae fade
+@charaShowCenter file="chara/haruhi_shomenjishin"
+@textShowName kyon
+[cb]（Only in times like this[br]
+is Haruhi's unfounded[br]
+confidence reassuring）[np]
+@itemGetShow 0
+[cb]（Looking at this confident[br]
+face makes me think)[np]
+[cb](that even a really violent[br]
+criminal would be reassured.）[np]
+Alright, Super Sensei,[np]
+My fate is in your hands now.[np]
+@textShowName haruhi
+Leave it to me![np]
+@backSet color=black fade
+@bgmPlay
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;裁判開始
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@textShowMessage
+@textShowScene line1="某月某日　3:30PM" line2="School Court: Courtroom"
+@itemGetNoshow 10
+@itemGetNoshow 11
+@itemGetNoshow 12
+@itemGetNoshow 13
+@itemGetNoshow 14
+@courtSetJudgeBack fade
+@bgmPlay file="kaitei"
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130 wipe
+@textShowMessage
+@textShowName mori
+Well then,[np]
+The trial regarding the theft[br]
+that occurred within the[br]
+literature club will now begin.[np]
+Is the defendant and[br]prosecutor ready?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName haruhi
+Yeah, no problems here.[np]
+@courtSetProsecutorBack
+@textShowName koizumi
+I'm also ready.[np]
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+Well,[br]
+I'm sure Koizumi knows but,[br]
+Why is Mori here?[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+ふふ……[np]
+Occasionaly I'm a maid,[br]
+Occasionaly I'm an Office Lady,[br]
+and Occasionaly I'm a judge.[np]
+Don't you think it's good[br]
+to have a mysterious woman?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+Hmm... Ofcourse.[np]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+Well, that's fine.[br]
+No matter who the judge is,[br]
+I will win.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Right, that's the spirit.[np]
+It is no exaggeration to say[br]
+that the fate of the accused,[br]
+Kyon,
+[np]
+Rests on Suzumiya's shoulders.[np]
+Suzumiya.[br]
+Is this your first time[br]
+attending a trial like this?[np]
+Seems so...[br]
+Shall I ask you a simple[br]
+question first?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+Of course.[br]
+I'm fully prepared,[br]
+it should be a peice of cake.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+I wouldn't say[br]that with such[br]confidence。[np]
+Well then, Suzumiya.[np]
+
+:hikoku_ha_dare
+Firstly, do you know the name[br]of the defendant?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+There's no need to[br]think about this.[np]
+:hikoku_ha_dare_show
+@itemShowKiroku x="632" y="541" target="hikoku_ha_dare_show"
+@textShowFull
+What is the name of the[br]defendant in this trial...?[br]
+[br]
+\　[link target="hikoku_jun"]Jun[/link][br]
+\　[link target="hikoku_kyon"]Kyon[/link][br]
+\　[link target="hikoku_chon"]Garouste Tekovitch III.[/link][br]
+[np]
+
+:hikoku_jun
+@textShowName haruhi
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowMessage
+It's Jun.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+What?, その人形と戯れてたり、通販に明け暮れてたり、あるいは政治家みたいな名前は？[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+Hey, just kidding.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+It's okay to joke for now but,[br]
+Please answer seriously[br]next time.[np]
+I'll ask you again then.[br]
+@goto target="hikoku_ha_dare"
+
+:hikoku_chon
+@textShowName haruhi
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowMessage
+Garouste Tekovitch III.[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+H-Hey, Haruhi.[br]
+Since when did I have such[br]a meaningless name?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+K-Kidding Kidding![np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+Enough with the[br]jokes for now[np]
+I'll ask you to be[br]serious next time.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+I'll ask you again then.[br]
+@goto target="hikoku_ha_dare"
+
+:hikoku_kyon
+@textShowName haruhi
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowMessage
+It's Kyon.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+That's right.[np]
+So, next question.[np]
+Do you know what this incident[br]is about?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+Of course I know![np]
+It's about-...[np]
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+[cb]（Huh?[br]
+Crap, What was it...[br]
+I can't remember...）[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomengiwaku" x=0 y=0
+@textShowName kyon
+Huh?[br]
+Are you ok?、Haruhi?[np]
+There's lots of information[br]
+written in the 『Court Record』.[np]
+If you can't remember,[br]
+please check it later. Ok?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+I-I know![np]
+[cb]（Court records...[br]I'll look at them later.）[np]
+
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Please answer then,[np]
+:jiken_ha_nani
+What happened in this[br]incident?[np]
+:jiken_ha_nani_show
+@itemShowKiroku x="632" y="541" target="jiken_ha_nani_show"
+@textShowFull
+What the hell happened...?[br]
+[br]
+\　[link target="jiken_ha_satsujin"]Mikuru was killed[/link][br]
+\　[link target="jiken_ha_shissou"]Mikuru was spirited away.[/link][br]
+\　[link target="jiken_ha_nusumi"]The maid outfit was stolen.[/link][br]
+[np]
+
+:jiken_ha_satsujin
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+Unfortunately……[br]
+Mikuru was killed by[br]someone...[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/mikuru_shomentachi" x=0 y=0
+@textShowName mikuru
+Eh?[br]
+I-I'm alive you know!.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Suzumiya.[br]
+Please be serious next time.[np]
+I'll listen again.[br]
+@goto target="jiken_ha_nani"
+
+:jiken_ha_shissou
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+Mikuru was spirited away![br]
+She's gone![br]
+Where did she go?[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/mikuru_shomentachi" x=0 y=0
+@textShowName mikuru
+Huh?[br]
+I-I'm right here![np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Suzumiya.[br]
+Please be serious next time.[np]
+I'll listen again.[br]
+@goto target="jiken_ha_nani"
+
+:jiken_ha_nusumi
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+Some idiot stole the[br]maid outfit![np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Right.[br]
+That's correct.[np]
+@bgmPlay
+It looks like everything[br]
+is ready. Now, let's[br]
+begin the hearing.[np]
+First, please let[br]
+Koizumi, the prosecutor,[br]
+call a witness.[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName koizumi
+Yes.[np]
+First,[br]
+I would like to hear[br]
+from the defendant.[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+What did Koizumi just say?![br]
+What should I do?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+Well, I guess you have[br]
+no choice but to go.[np]
+Be careful not to slip up![np]
+@backSet color="black" fade
+@courtSetWitnessBack fade
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+[w 1000]
+
+@bgmPlay file="kaitei"
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+Well then.[np]
+What do you think[br]
+about Asahina's[br]
+appearance as a maid?[np]
+@charaShowCenter file="chara/kyon_shomenegao" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+Well, she's so cute[br]
+that I think she's an angel.[np]
+The tea that Asahina serves[br]
+is delicious, even if it's[br]
+tap water.[np]
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+[cb]（That came from the heart!）[np]
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+Well, Asahina's maid outfit[br]was stolen.[np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+I'm devastated by this.[br]When coming to the clubroom[br]what will I have to look forward to now?[np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+In our discussion[br]the other day.[np]
+We couldn't decide whether[br]
+the defendant stole it[br]
+or a third party stole it.[np]
+However, I believe that[br]
+there was no third party.[br]
+The defendant stole it.[np]
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+@sePlay file="机を叩く"
+What do you mean?[br]
+Koizumi![np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+Hey, calm down,[br]
+Haruhi...[np]
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+@sePlay file="机を叩く"
+Just saying something[br]
+random is not enough![np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+No, I'm not saying[br]
+anything random.[np]
+Defendant,could you testify[br]
+about the order of[br]
+people that day?[np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+If I remember correctly...[br]
+I entered the clubroom first.[np]
+Next, Asahina came and told me[br]
+she was changing, so I[br]
+left the club room.[np]
+As I left, Haruhi came and[br]
+went straight into the clubroom[br]
+to help Asahina.[np]
+As I waited outside[br]
+the clubroom you[br]eventually arrived.[np]
+After that, we were told[br]
+we could enter.[np]
+We then learned the[br]
+maid outfit was stolen[np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+That's right.[np]
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+The defendent came to the[br]
+club room first so they[br]
+are the most suspicous[np]
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+What's that?[br]
+Just because it's suspicous[br]
+doesn't mean there's proof.[np]
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+No, there's proof.[np]
+@bgmPlay
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@sePlay file="机を叩く"
+A witness said he saw the[br]
+defendant steal a maid[br]uniform.[np]
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+@sePlay file="犯人ショック"
+What?[np]
+[cb]（That idiot...）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+That speech was quick.[br]
+What kind of person[br]is this?[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName koizumi
+The director of the[br]computer lab.[np]
+He witnessed the defendant[br]
+stealing the maid uniform![np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowMessage
+@textShowName mori
+Koizumi, please call that[br]witness.[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@textShowName koizumi
+Understood.[np]
+@charaShowCenter file="chara/kyon_shomengiwaku" x=0 y=0
+@courtSetWitnessBack
+@textShowName kyon
+[cb](This is getting[br]fishy...)[np]
+@charaShowRight file="chara/koizumi_tachi" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+I call the Director of the[br]
+Computer Lab who was[br]
+standing idly in the hallway![np]
+@backSet color="black" fade
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;証人喚問
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@itemGetNoshow 15
+@courtSetWitnessBack fade
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+@bgmPlay file="kaitei"
+@textShowName comp
+Good afternoon.[np]
+As you know,[br]
+I am the head of[br]
+the Computer Lab.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Well then,[br]
+Please give your[br]
+testimony immediately.[np]
+Please tell us what you[br]
+saw on the day of the[br]
+incident[np]
+@bgmPlay
+@testimonyRun file="zin1" bgm="jinmon_mode"
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomenaseri" x=0 y=0
+@bgmPlay
+@textShowName kyon
+I-Impossible.[np]
+Is there such a thing as an[br]
+eyewitness testimony of[br]
+something that didn't happen?[np]
+Could it be that I was actually[br]
+crazy and unconsciously[br]
+stole the maid outfit...?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@bgmPlay file="shinjitsu"
+@textShowName haruhi
+How crazy are you, Kyon?[np]
+In this case,[br]
+either you're lying[br]
+or the witness is.[np]
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+...[br]
+You didn't steal it,[br]
+right?[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+Obviously...![br]
+There's no way I'd steal it.[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+Then the witness must[br]be lying.[np]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+Watch and learn![br]
+I'll shatter this lie![np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+R-Right...[br]
+I'm sure it's a lie.[np]
+@charaShowCenter file="chara/kyon_shomenegao" x=0 y=0
+It seems like my fate[br]
+depends on you, Haruhi[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tere" x=0 y=0
+@textShowName haruhi
+Well, it's the leader's job[br]
+to prove the innocence of[br]
+the group members.[np]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+We don't want someone stealing[br]
+maid clothes from our[br]
+SOS group.[np]
+This is going to hurt[br]
+the head of the Computer Lab[br]
+a fair bit.[np]
+I'll thoroughly shake him up[br]
+and bring the truth to light![np]
+I'll make the contradictions[br]
+bleed from him![np]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;第一回尋問
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@bgmPlay
+@inquiryRun file="zin1" bgm="jinmon_mode"
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+The hallway was crowded.[br]
+Kyon goes out into the hallway[br]carrying the maid outfit.[np]
+And you were watching this.[np]
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+Y-Yeah?[np]
+@charaShowLeft file="chara/haruhi_igi" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+@sePlay file="場面強調"
+What you're saying is strange.[np]
+@courtShowIgi right
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@courtSetProsecutorBack noscr
+@textShowName koizumi
+@sePlay file="机を叩く"
+[w 500]
+@charaShowRight file="chara/koizumi_igi" x=0 y=0
+There is nothing strange[br]
+about what the witness said.[np]
+The defense attorney is trying[br]
+to unreasonably intimidate the[br]
+witness and elicit false information.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+I agree.[np]
+I don't think there's[br]
+anything strange about[br]
+it either...[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+What's going on,[br]
+Suzumiya?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+Hold on, Hold on.[np]
+@charaShowLeft file="chara/haruhi_setsumei" x=0 y=0
+@bgmPlay file="igiari"
+@itemShow 2 right
+Kyon is walking out into a[br]
+crowd holding such conspicuous[br]
+and noticable clothes?[np]
+It's strange no matter[br]
+how you think about it[np]
+If that's true[br]
+There should be[br]
+more witnesses![np]
+@itemHide
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+@sePlay file="犯人ショック"
+Ack![np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+That's certainly true.[np]
+What's going on,[br]witness?[np]
+@courtSetWitnessBack
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@textShowName comp
+U-Umm that's...[np]
+@courtShowMatta right
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+Regarding that point,[br]
+that's true but the witness[br]seems a little nervous.[np]
+Probably as it's[br]his first time in court.[np]
+The testimony he just gave is[br]
+slightly different from the[br]
+testimony I heard.[np]
+I would like to have him[br]
+testify again,[br]
+what do you think?[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Is that so?[np]
+Well, I can't help it.[br]
+Allow him to repeat his[br]testimony.[np]
+@courtSetProsecutorBack
+@charaShowRight file="chara/koizumi_ojigi" x=0 y=0
+@textShowName koizumi
+Thank you for understanding.[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@courtSetWitnessBack noscr
+@textShowName comp
+Ah, yes, yes! I remembered![np]
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+Sorry, I had a slight[br]
+misunderstanding.[np]
+I will repeat my testimony.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+...Please be more precise[br]
+next time.[np]
+@bgmPlay
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;第二回尋問
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@testimonyRun file="zin2" bgm="jinmon_mode"
+@courtSetJudgeBack
+@bgmPlay
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+I see,[br]
+It was stuffed inside[br]
+the gym bag.[np]
+And you saw the[br]
+maid outfit...[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+In that case,[br]
+Other people may not[br]
+notice it.[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@textShowName haruhi
+[cb]（It certainly doesn't seem[br]like there is anything strange[br]at first glance...）[np]
+@bgmPlay file="suspence"
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+[cb]（This is bad...）[np]
+[cb]（I need to bluff[br]and buy myself some time[br]and think it over.）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+What do you think, Suzumiya?[br]
+Is there a problem with his[br]current testimony?[np]
+@textShowFull
+Is there a problem with his[br]current testimony?[br]
+[br]
+\　[link target="hattari_ok"]Yes, there is.[/link][br]
+\　[link target="hattari_ng"]No, there isn't.[/link][br]
+[np]
+
+:hattari_ng
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowMessage
+@textShowName haruhi
+Hmm, I don't think there's[br]a problem.。[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+It can't be...![np]
+I didn't do anything![br]
+Please, Haruhi.[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+But there doesn't seem[br]
+to be anything strange[br]
+about that testimony.[np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomengiwaku" x=0 y=0
+@textShowName kyon
+Hey, don't jump to[br]
+conclusions before you[br]
+interrogate him.[np]
+I really didn't steal it,[br]
+right?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@textShowName haruhi
+[cb]（It's true that if things[br]continue like this,[br]Kyon will become the culprit...）[np]
+[cb]（If I interrogate more,[br]I could find his mistake,[br]and call it out.）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Well then, Suzumiya.[br]
+Just to be sure,[br]I'll check again.[np]
+Is there a problem with his[br]current testimony?[np]
+@textShowFull
+Is there a problem with his[br]current testimony?[br]
+[br]
+\　[link target="hattari_ok"]There is a slight problem.[/link][br]
+\　[link target="hattari_ng2"]No problems![/link][br]
+[np]
+
+
+:hattari_ng2
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowMessage
+@textShowName haruhi
+Hmm,[br]
+No problems at all.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+I see, that's a shame.[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+Does that mean that the[br]
+defendant is the culprit?[np]
+@goto target="nolife"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;犯人を暴け！
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:hattari_ok
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@textShowMessage
+@textShowName haruhi
+Uhhh,Yes.[br]
+I still feel that[br]
+something is wrong.[np]
+So I would like to[br]question him.[np]
+@courtShowMatta right
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@courtSetProsecutorBack noscr
+@sePlay file="机を叩く"
+[w 500]
+@textShowName koizumi
+@charaShowRight file="chara/koizumi_katasukume" x=0 y=0
+I see no contradiction[br]in this testimony.[np]
+The defense attorney is[br]
+clearly trying to conduct [br]
+cross-examination to buy time.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+Well,[np]
+I don't think any further[br]
+questioning is necessary[br]
+either but...[np]
+@courtShowIgi right
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@textShowName haruhi
+@sePlay file="机を叩く"
+[w 500]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+If there is a contradiction,[br]
+it will become[br]
+crystal clear soon![np]
+And I have backing to[br]
+point out that contradiction![np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+Well, if Suzumiya says that[br]much, then...[np]
+@bgmPlay
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+That's fine.[np]
+Let's begin the[br]
+cross examination.[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@textShowName haruhi
+[cb]（I can feel my palms sweat）[np]
+
+@inquiryRun file="zin2" bgm="jinmon_are"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;馬脚を現したコンピ研
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@charaShowLeft file="chara/haruhi_igi" x=0 y=0
+@courtSetLawyerBack
+@textShowName haruhi
+@sePlay file="机を叩く"
+Hmpth.[br]
+I finally got my lead.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+……？[np]
+What's wrong, Suzumiya?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+The witness there said[br]
+Kyon was carrying the[br]
+gym bag[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+That's what he said.[br]
+So what?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+That's strange in[br]
+the first place.[np]
+@bgmPlay file="tuikyu"
+@itemShow 5 right
+@charaShowLeft file="chara/haruhi_setsumei" x=0 y=0
+Because this,[br]
+No matter how you look at it,[br]
+doesn't look like a gym bag.[np]
+does it?[np]
+@itemHide
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@courtSetWitnessBack noscr
+@textShowName comp
+@sePlay file="犯人ショック"
+Gah!!![np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+It certainly doesn't look[br]
+like a gym uniform bag.[np]
+Or rather, what is this?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+Shamisen--[br]
+a bag of cat food.[np]
+However, the other day I did[br]
+find Kyon's gym clothes[br]in there.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persodoroki" x=10 y=-130
+@textShowName mori
+?[np]
+I don't really understand what[br]
+you're saying, what exactly[br]
+do you mean?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tachi" x=0 y=0
+@textShowName haruhi
+No one would look at[br]
+this bag and think it's[br]
+meant to hold gym clothes.[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@courtSetWitnessBack
+But he said he saw Kyon with a[br]gym bag.[np]
+So somehow he knew[br]there were gym clothes[br]in the cat food bag.[np]
+@courtShowIgi right
+@charaShowRight file="chara/koizumi_tataki" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+@sePlay file="机を叩く"
+[w 500]
+@charaShowRight file="chara/koizumi_igi" x=0 y=0
+The defense attorney's[br]
+statements are just[br]speculations and have no proof.[np]
+@backSet file="bg_koizumi_up"
+@sePlay file="異議あり"
+I could tell at a glance[br]
+that this bag was meant to[br]hold gym clothes.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+@textShowName mori
+Koizumi,[br]
+that's too unreasonable.[np]
+No matter how you look at it,[br]
+noone would look at a cat food[br]
+bag and think it was a gym bag.[np]
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+Suzumiya, please continue.[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+@textShowName haruhi
+Thankyou for your[br]understanding,[br]Mori.[np]
+The only way for him, who is[br]
+not our classmate...[np]
+To know that there were gym[br]
+clothes in the food bag...[np]
+Is to actually see what's[br]
+inside the bag![np]
+And this bag had been left in[br]
+the club room since yesterday.[np]
+@backSet file="bg_haruhi_up"
+@sePlay file="異議あり"
+In other words![np]
+On the day of the incident,[br]
+He entered the club room![br]
+Before Kyon entered![np]
+@courtSetWitnessBack noscr
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@textShowName comp
+@sePlay file="犯人ショック"
+Im-Impossible![np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+Th-That-s right![np]
+This guy always brings his gym[br]
+clothes in his cat food bag![np]
+So I've seen it before![np]
+@courtSetGuideBack
+@charaShowCenter file="chara/kyon_shomentachi" x=0 y=0
+@textShowName kyon
+Good grief.[br]
+That idiot.[np]
+The only time I put it in this[br]
+bag was during PE the day[br]
+before the incident.[np]
+I would be a weirdo if I[br]
+brought a bag of cat food[br]
+like this every time.[np]
+If you have any doubts about[br]
+the fact that I usually have a[br]
+regular bag...[np]
+You can ask anyone in my class.[np]
+@courtSetWitnessBack noscr
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@textShowName comp
+@sePlay file="犯人ショック"
+Urnghh...[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+@textShowName mori
+This trial took an[br]
+unexpected turn.[np]
+Suzumiya,[br]
+perhaps you know the culprit?[np]
+@courtSetLawyerBack
+@charaShowLeft file="chara/haruhi_tataki" x=0 y=0
+@textShowName haruhi
+@textShowMessage
+@sePlay file="机を叩く"
+[w 500]
+@charaShowLeft file="chara/haruhi_ibari" x=0 y=0
+Ofcourse![br]
+[cb]（I have no proof at all!）[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+@textShowName mori
+Let me hear it.[np]
+:hannin
+Suzumiya, who is the culprit?[np]
+@itemSelect item="15" success="hannin_ok" miss="hannin_ng" charaonly kurae right
+
+:hannin_ng
+  @textShowMessage
+  @textShowName haruhi
+  This person is the culprit![np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  ...Based on what has been[br]
+  said so far, you think[br]
+  that person is the culprit?[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  Precisely,[br]I think it's them.[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  Huhh?.[np]
+  Suzumiya.[br]Please think more[br]carefully before speaking.[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @textShowName haruhi
+  @courtReduceLife
+  [cb](It seems like Mori's[br]confidence in me[br]has worsened...）[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+  @textShowName mori
+  Then again……[br]
+  Let's hear it.[np]
+@goto target="hannin"
+
+:hannin_ok
+@textShowMessage
+@textShowName haruhi
+Of course they were:[br]
+The Computer Club's Director[br]
+who that was there！[np]
+@courtSetWitnessBack
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+When he went into the[br]
+club room to steal the[br]
+maid uniform.[np]
+He put the shoes in Kyon's[br]
+gym bag nearby.[np]
+That's why he called this[br]
+cat food bag a gym uniform bag![np]
+@courtShowMatta right
+@charaShowRight file="chara/koizumi_igi" x=0 y=0
+@courtSetProsecutorBack
+@textShowName koizumi
+If that's so, how was he[br]
+able to enter our club room[br]
+unnoticed?[np]
+Usually, Nagato would[br]be there.[np]
+@charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+R-Right![np]
+I didn't know the[br]club room was empty.[np]
+How would I know the[br]club room was empty?![np]
+@textShowMessage
+@textShowName haruhi
+[cb]（...It's so easy it[br]makes me laugh）[np]
+:hannin_aribai
+[cb]（Here's how the head[br]of the computer lab knew[br]that the club room was empty!）[np]
+@itemSelect item="4" success="hannin_aribai_ok" miss="hannin_aribai_ng" kurae
+
+:hannin_aribai_ng
+  This piece of evidence clearly[br]
+  shows the contradictions in the[br]
+  criminal's claims![np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  ...What is the relationship[br]between that piece of[br]evidence and an alibi?[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_tere" x=0 y=0
+  @textShowName haruhi
+  ……On second thoughts,[br]There is none.[np]
+  @courtSetJudgeBack
+  @charaShowCenter file="chara/mori_persshikame" x=10 y=-130
+  @textShowName mori
+  Suzumiya,[br]next time think a[br]bit more before speaking.[np]
+  @courtSetLawyerBack
+  @charaShowLeft file="chara/haruhi_ase" x=0 y=0
+  @textShowName haruhi
+  @courtReduceLife
+  [cb]（It seems like Mori's[br]confidence in me[br]has worsened...）[np]
+  @charaShowCenter file="chara/comp_shomentachi" x=0 y=0
+  @courtSetWitnessBack
+  @textShowName comp
+  Well, How did I[br]know that your club[br]room was empty?[np]
+  @textShowMessage
+  @textShowName haruhi
+@goto target="hannin_aribai"
+
+:hannin_aribai_ok
+It's simple.[np]
+On that day, Yuki went to[br]the Computer Lab[np]
+so it was natural that[br]
+she wasn't in[br]
+the literature club room.[np]
+You can also tell by asking[br]
+that there was no one in the[br]
+literature club room yet.[np]
+@courtSetJudgeBack
+@charaShowCenter file="chara/mori_persshikou" x=10 y=-130
+@textShowName mori
+I see, that's true.[np]
+How is that, witness?[br]
+Anything else to say?[np]
+@courtSetWitnessBack
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@textShowName comp
+@sePlay file="犯人ショック"
+Uhhh[np]
+@textShowLoud value="う、うおおおおおおおおおおおおおおおおっ！！"
+AaaAA, That's right![br]
+I'm sure I stole it![np]
+But I was scared that[br]
+the otaku leader would find out,[br]
+so I decided to blame Kyon![np]
+I placed the Maid shoes[br]
+in Kyon's Gym Clothes[br]
+which happened to be open[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+I had no idea it was[br]
+a bag of cat food...[np]
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+Why did you want to steal it?。[np]
+@charaShowCenter file="chara/comp_shomenaseri" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+Nagato……。[np]
+@charaShowLeft file="chara/haruhi_shikou" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+Nagato？[np]
+@charaShowCenter file="chara/comp_shomenshock" x=0 y=0
+@courtSetWitnessBack
+@textShowName comp
+@bgmPlay
+@textShowLoud value="I wanted to see her as a maid!!!!"
+@charaShowLeft file="chara/haruhi_ase" x=0 y=0
+@courtSetLawyerBack noscr
+@textShowName haruhi
+Ah, I see...[np]
+@backSet color="black" fade
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;裁判終了
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@courtSetJudgeBack fade
+@charaShowCenter file="chara/mori_perstachi" x=10 y=-130
+@textShowName mori
+@bgmPlay file="kaitei"
+@textShowMessage
+Surprisingly, I came to[br]
+the conclusion that the[br]
+witness was the culprit.[np]
+I no longer see the[br]
+need for further deliberation.[np]
+Although it is only a[br]
+formality the new defendant[br]
+will be sentenced.[np]
+@bgmPlay
+@courtShowPlea
+Well, that concludes the[br]court today![np]
+
+@backSet color="black" fade
+@textShowName kyon
+[cb]（Thus, the incident in which[br]I was suspected of being[br]a culprit ended.）[np]
+@textShowScene line1="某月某日　某時刻" line2="文{ＳＯＳ団}芸部　部室"
+@backSet file="bg_bushitu" wipe
+@charaShowCenter file="chara/haruhi_shomenegao" wipe
+@bgmPlay file="shouso"
+@textShowName haruhi
+Well, I'm glad the real[br]culprit was found.[np]
+@textShowName kyon
+Totally, Super Sensei Haruhi.[np]
+...[np]
+Also, some bastard went out[br]
+of his way...[np]
+To bring in a witness[br]
+and treat me like a criminal,[br]
+right?[np]
+@charaHideAll
+@charaShowLeft file="chara/haruhi_shomenegao"
+@charaShowRight file="chara/koizumi_shomentere" wipe
+@textShowName koizumi
+Hahaha. I'm sorry.[np]
+@charaShowRight file="chara/koizumi_shomentachi"
+Well, even so,[br]
+hats off to Suzumiya-san.[np]
+I never thought I would[br]
+hear a confession of guilt[br]
+from a witness.。[np]
+@charaShowLeft file="chara/haruhi_shomenjishin"
+@textShowName haruhi
+ふっふっふ。[np]
+After all, I am the[br]
+leader of the SOS group![np]
+I can't let troubled[br]
+members suffer unjust treatment![np]
+@charaShowLeft file="chara/haruhi_shomenegao"
+Leave it to me from now on![np]
+@charaHideAll
+@charaShowCenter file="chara/mikuru_shomentere" wipe
+@textShowName mikuru
+I'm really glad the culprit[br]
+is not Kyon.[np]
+@charaHideAll wipe
+@textShowName kyon
+[cb]（I feel relieved[br]that the matter is settled.）[np]
+[cb]（……）[np]
+[cb]（………）[np]
+[cb]（…………）[np]
+[cb](……By the way)[np]
+[cb](The Director of the Computer Club[br]
+said something interesting[br]
+at the end.)[np]
+[cb]（確かに彼女も女の子なんだし、もしかしたら興味くらいはあるのかもしれない）[np]
+[cb]（Yes, the person who[br]was interested in[br]the maid costume is...）[np]
+@itemSelect item="13" success="ed_nagato" miss="ed_other" charaonly
+
+:ed_other
+@textShowName kyon
+@textShowMessage
+[cb](...No, no, that's not true.)[np]
+[cb](Let's calm down and remember)[np]
+[cb](Perhaps they are interested[br]in maid costumes...)[np]
+@itemSelect item="13" success="ed_nagato" miss="ed_other" charaonly
+
+:ed_nagato
+@textShowName kyon
+@textShowMessage
+[cb]（It's Nagato）[np]
+@charaShowCenter file="chara/nagato_shomentachi" wipe
+[cb]（長門のほうを見てみると、波一つない目でこちらを見上げている）[np]
+[cb]（しかし俺にはこの長門の目から好奇心らしきものが見えるような気がした）[np]
+What do you think? Nagato?[np]
+Are you interested[br]in maid costumes?[np]
+@textShowName nagato
+…[w 500]…[w 500]
+@charaShowCenter file="chara/nagato_shomenshikou"
+…[w 500]…[w 500]
+@charaShowCenter file="chara/nagato_shomentachi"
+…[w 500]Yes.[np]
+@charaHideAll
+@charaShowLeft file="chara/nagato_shomentachi"
+@charaShowRight file="chara/haruhi_shomentachi" wipe
+@textShowName haruhi
+Hey, do you want to[br]wear it too, Yuki?[np]
+@charaShowRight file="chara/haruhi_shomenegao"
+I thought you wouldn't be[br]
+interested in this kind of thing,[br]
+but you're a girl after all![np]
+@charaShowRight file="chara/haruhi_shomentachi"
+Either way,[br]I'll help you get changed.[np]
+Hey Hey,[br]
+Get out you guys![np]
+@sePlay file="ドア開閉"
+[w 500]
+@backSet color="black" fade
+@backSet file="bg_rouka" fade
+@charaShowCenter file="chara/koizumi_shomentere" wipe
+@textShowName koizumi
+Well, I'm really sorry about that.[np]
+コンピ研部長が猛烈にプッシュしてくるものですから、[np]
+@charaShowCenter file="chara/koizumi_shomentachi"
+僕としたことがつい、ね。[np]
+@textShowName kyon
+ふん……。[np]
+I owe you this time.[np]
+@sePlay file="ドア開閉"
+[w 500]
+@charaShowCenter file="chara/mikuru_shomenegao" wipe
+@textShowName mikuru
+Umm.[np]
+Now that she's changed her clothes[br]
+you can come in now.[np]
+@sePlay file="ドア開閉"
+[w 500]
+@backSet color="black" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@backSet file="bg_nagato" fade
+@textShowName nagato
+How is it...?[np]
+@textShowName kyon
+Koizumi...[np]
+@textShowName koizumi
+Yes, what is it?[np]
+@textShowName kyon
+I retract my previous statement.[np]
+こんなに萌える長門を拝むことができたんだ。[np]
+Maybe I should be grateful to you.[np]
+@textShowName haruhi
+Right?[np]
+有希も似合うわよねー。[np]
+How is it, Nagato?[br]
+I plan on you wearing[br]
+it more often from now on.[np]
+@textShowName nagato
+...I'll think about it.[np]
+@textShowName kyon
+[cb]（I was able to witness something[br]so beautiful at the end.）[np]
+[cb]（Courts can sometimes be a good thing.）[np]
+@backSet color="black" fade
+@exit rescode="clear"
