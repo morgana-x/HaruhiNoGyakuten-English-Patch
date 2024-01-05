@@ -11,3 +11,13 @@ https://archive.org/details/suzumiya-haruhi-no-gyakuten
 https://archive.org/details/saiban_202212suzumiya-haruhi-no-gyakuten-21
 
 https://archive.org/details/suzumiya-haruhi-no-gyakuten-3
+
+
+# Progress
+
+## First Game
+Names - (50%)
+Buttons - (80%)
+1st Trial - The stolen Maid Costume (95%)
+2nd Trial - (0%)
+3rd Trial - (0%)
