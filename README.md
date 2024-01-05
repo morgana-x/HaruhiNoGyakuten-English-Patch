@@ -1,7 +1,8 @@
 # HaruhiNoGyakuten-English-Patch
 
 An english patch for all the games in the Haruhi no Gyakuten (Haruhi's Turnabout / Suzumiya Haruhi: Ace Detective) series.
-Reccomended that [DmfLib](https://github.com/morgana-x/dmfLib)'s extracting utility is used to apply the patch.
+
+Reccomended that [DmfLib](https://github.com/morgana-x/dmfLib)'s extract/repack utility is used to apply the patch.
 
 Links to the games:
 
